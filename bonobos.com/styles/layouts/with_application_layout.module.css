@@ -1,0 +1,44 @@
+@import "../fonts.css";
+@import "../media.css";
+@import "../design_tokens.css";
+
+.applicationLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Avenir Next';
+
+  &.minified {
+    margin-top: $(desktopMinifiedHeaderBreakpoint)px;
+  }
+}
+
+.topContent {
+  width: 100%;
+  z-index: 10;
+}
+
+.mainContent {
+  flex: 1;
+  min-height: 90vh;
+}
+
+.pageContent {
+  position: relative;
+
+  @media(--desktop) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.mainContentContainer {
+  display: flex;
+  flex-direction: column;
+  flex-shrink:2;
+  flex-grow:2;
+  min-height: 100vh;
+  @media(--desktop) {
+    width: calc(100% - 200px);
+  }
+}

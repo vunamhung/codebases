@@ -1,0 +1,59 @@
+/*
+This CSS resource incorporates links to font software which is the valuable copyrighted
+property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+Imaging with any questions regarding Web Fonts:  http://www.monotype.com/
+*/
+
+
+/* resolve is part of postcss-assets */
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/avenir/AvenirNextW06-Regular.woff") format('woff');
+  font-weight: 400;
+  font-display: swap;
+  }
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/avenir/AvenirNextW06-Medium.woff") format('woff');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/avenir/AvenirNextW04-Demi.woff") format('woff');
+  font-weight: 700;
+  font-display: swap;
+} 
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/avenir/AvenirNextW06-Bold.woff") format('woff');
+  font-weight: 900;
+  font-display: swap;
+ }
+
+@font-face {
+  font-family: "Sangbleu Kingdom";
+  src: url("fonts/sangbleu/SangBleuKingdom-Light.woff") format('woff');
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sangbleu Kingdom";
+  src: url("fonts/sangbleu/SangBleuKingdom-Bold.woff") format('woff');
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sangbleu Empire";
+  src: url("fonts/sangbleu/SangBleuEmpire-Bold.woff") format('woff');
+  font-weight: 900;
+  font-display: swap;
+}
+  

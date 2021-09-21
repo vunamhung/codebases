@@ -1,0 +1,47 @@
+@import "../typography.css";
+@import "../mixins.css";
+@import "../colors.css";
+
+.item {
+  display: block;
+  padding: $spacingNudge 0;
+  @mixin text_primary;
+  @mixin subNavigationText;
+  font-weight: 400;
+
+  &:hover {
+    color: $black;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  &.parent {
+    width: 100%;
+    border: none;
+    background: none;
+    appearance: none;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:after {
+      font-size: 18px;
+      vertical-align: middle;
+      display: inline-block;
+      margin: 0 $spacingNudge;
+    }
+
+    &.minus:after {
+      content: '—';
+    }
+
+    &.plus:after {
+      content: '+';
+    }
+  }
+
+  &.active {
+    @mixin text_primary;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,160 @@
+@import "../typography.css";
+@import "../media.css";
+@import "../mixins.css";
+@import "../colors.css";
+
+.component {
+  &.default {
+    .popperBg {
+      @media (max-width: 450px) {
+        width: 80% !important;
+        left: 10% !important;
+        top: 10% !important;
+        max-height: 90% !important;
+        transform: none !important;
+        position: fixed !important;
+        overflow-y: auto;
+        .arrow {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.wrapper {
+
+}
+
+.popperBg {
+  width: 240px;
+  box-shadow: 0 2px 4px 0 rgba(76,76,75,.1);
+  border-radius: 4px;
+  padding: $spacingXs $spacingSm;
+  @mixin background_primary;
+  z-index: 5;
+  border: 1px solid $grey3;
+}
+
+.target {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  box-sizing: border-box;
+  height: 15px;
+  width: 15px;
+  @mixin background_primary;
+  transform-origin: center;
+  transform: rotate(45deg);
+
+  &.right {
+    left: -8px;
+    border-left: 1px solid $grey3;
+    border-bottom: 1px solid $grey3;
+  }
+
+  &.left {
+    right: -8px;
+    border-right: 1px solid $grey3;
+    border-top: 1px solid $grey3;
+  }
+
+  &.top {
+    bottom: -8px;
+    border-right: 1px solid $grey3;
+    border-bottom: 1px solid $grey3;
+  }
+
+  &.bottom {
+    top: -8px;
+    border-left: 1px solid $grey3;
+    border-top: 1px solid $grey3;
+  }
+}
+
+.closeButton {
+  @mixin bodyText;
+  background: transparent;
+  padding: 0;
+  margin-bottom: $spacingSm;
+  text-align: center;
+  width: 100%;
+  @mixin text_brand;
+  border: none;
+  display: none;
+
+  @media (max-width: 450px) {
+    display: block;
+  }
+}
+
+.icon {
+  font-size: $iconSizeSm
+  @mixin icon_color_primary;
+}
+
+.admin {
+  .popperBg {
+    border-radius: 4px;
+  }
+}
+
+.account {
+  .popperBg {
+    width: 200px;
+    height: auto;
+    box-shadow: 0 2px 9px 0 rgba(0,0,0,0.09);
+    border-radius: 0px;
+    padding-top: $spacingNudge;
+    padding-bottom: $spacingNudge;
+    ul {
+      padding-top: $spacingXs;
+      &:not(:first-child) {
+          border-top: 1px solid $grey3;
+      }
+
+      li {
+        @mixin metaDescriptionText;
+        @mixin text_secondary;
+        padding-bottom: $spacingSm;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+          display: block;
+          &:hover {
+            @mixin text_primary;
+          }
+        }
+
+        button {
+          color: inherit;
+          @mixin metaDescriptionText;
+          appearance: none;
+          background: none;
+          border: none;
+          padding-left: 0;
+          text-transform: capitalize;
+          &:hover {
+            @mixin text_primary;
+          }
+        }
+      }
+    }
+
+
+    .arrow {
+      display: none;
+    }
+
+    .closeButton {
+      display: none;
+    }
+  }
+  .target {
+    display: flex;
+  }
+}

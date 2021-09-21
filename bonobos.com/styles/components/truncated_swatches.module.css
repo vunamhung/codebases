@@ -1,0 +1,63 @@
+@import "../typography.css";
+@import "./swatch_common.css";
+
+/* These widths come from the 2x the size of the swatch (because the see more link
+   takes up 2 units of space) plus the space in between (which is 8px * 2) */
+/* Also for some reason I can't use `calc()` with variables,
+   so that's why these number are not calculated. */
+$defaultSeeMoreWidth: 72px;
+$smallSeeMoreWidth: 64px;
+
+.component {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &.small {
+    .swatch {
+      width: $smallSize;
+      height: $smallSize;
+    }
+
+    .seeMore {
+      width: $smallSeeMoreWidth;
+      height: $smallSize;
+      line-height: $smallSize;
+    }
+  }
+
+  &.skinny {
+    .swatch {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+
+    .seeMore {
+      width: 30px;
+      height: $smallSize;
+      line-height: $smallSize;
+    }
+  }
+}
+
+.item {
+  display: flex;
+  margin: 4px 8px;
+}
+
+.swatch {
+  width: $defaultSize;
+  height: $defaultSize;
+}
+
+.seeMore {
+  @mixin captionDescriptionText;
+  white-space: nowrap;
+  width: $defaultSeeMoreWidth;
+  height: $defaultSize;
+  line-height: $defaultSize;
+
+  a {
+    color: inherit;
+  }
+}

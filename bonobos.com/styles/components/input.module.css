@@ -1,0 +1,76 @@
+@import "../typography.css";
+@import "../mixins.css";
+@import "../colors.css";
+
+.component {
+  :disabled {
+    opacity: .5;
+  }
+}
+
+.input {
+  @mixin inputText;
+  @mixin text_primary;
+  @mixin border_input;
+  height: 56px;
+  width: 100%;
+  padding-left: 10px;
+  appearance: none;
+}
+
+/* selector overriding is input[type='text'] */
+.error input.input {
+  @mixin border_error;
+}
+.hint {
+  @mixin captionDescriptionText;
+  @mixin text_secondary;
+}
+
+.errorMessage {
+  @mixin metaDescriptionText;
+  @mixin text_error;
+  padding-top: 5px;
+  text-align: left;
+}
+
+.normal {
+}
+
+.borderless {
+  &.component {
+    position: relative;
+  }
+
+  .input {
+    @mixin inputText;
+    @mixin text_primary;
+    border: 0;
+  }
+
+  .errorMessage {
+    position: absolute;
+    @mixin text_white;
+    @mixin background_error;
+    padding: 15px;
+    bottom: 57px;
+    text-align: left;
+    margin: 0;
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 9;
+      left: 10px;
+      bottom: -7px;
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 12px solid $alert1;
+      font-size: 0;
+      line-height: 0;
+    }
+  }
+}

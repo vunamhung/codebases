@@ -1,0 +1,89 @@
+@import "../../typography.css";
+@import "../../mixins.css";
+
+.answer {
+  @mixin accessible_button
+  color:rgb(65, 75, 86);
+  display:block;
+  padding-left: $spacingSm;
+  padding-right: $spacingSm;
+  max-width: 25%;
+  min-width: 38px;
+  cursor:pointer;
+  @media (--smartphone) {
+    max-width: 48%;
+    min-width: 38px;
+  }
+  @media (--tablet) {
+    max-width: 32%;
+    min-width: 38px;
+  }
+
+
+  .answerTitle {
+    @mixin background_primary;
+    @mixin border_primary;
+    color: black;
+  }
+
+
+  &:hover {
+    @media (--tablet-and-desktop) {
+      .answerTitle {
+        @mixin background_alternate;
+        color:white;
+      }
+    }
+  }
+
+  &.isSelected {
+    .answerTitle {
+      @mixin background_alternate;
+      color:white;
+    }
+  }
+
+  .answerOption {
+    align-items:center;
+    @mixin text_secondary;
+
+    .answerPicture {
+      box-sizing:border-box;
+      @mixin text_secondary;
+    }
+
+    .answerText {
+      @mixin text_primary;
+      cursor:pointer;
+      display:inline-block;
+      margin-bottom:18px;
+      margin-top:24px;
+      text-align:center;
+
+      .answerTitle {
+        @mixin metaTitleText;
+        border-radius: 100px;
+        box-sizing:border-box;
+        display:inline-block;
+        align-items: center;
+        line-height: 36px;
+        padding: 0 $spacingSm;
+        height: 38px;
+        min-width: 38px;
+        text-align:center;
+        font-size: min(2vw, 14px);
+        @media (--smartphone) {
+          font-size: 2.8vw;
+        }
+      }
+
+      .answerDescription {
+        @mixin bodyTitleText;
+        @mixin text_primary;
+        margin-left:0px;
+        margin-top:12px;
+        max-width:300px;
+      }
+    }
+  }
+}

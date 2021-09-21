@@ -1,0 +1,28 @@
+@import "../mixins.css";
+
+/* requires transforming with postcss-prefix-selector in postcss config to be prefixed with .component :global */
+@import "react-id-swiper/src/styles/css/swiper.css";
+
+.component {
+  :global .swiper-pagination-progressbar {
+    :global .swiper-pagination-progressbar-fill {
+      background: black;
+    }
+  }
+  .swiperButtons {
+    background-image: none !important;
+    @mixin background_primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+    width: 44px;
+  }
+}
+
+.bullet {
+  background: black;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}

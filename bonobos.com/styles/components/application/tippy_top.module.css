@@ -1,0 +1,118 @@
+@import "../../media.css";
+@import "../../typography.css";
+@import "../../mixins.css";
+
+.component {
+  display: flex;
+  text-align: center;
+  padding: $spacingXs;
+  position: relative;
+
+  @media (--smartphone-and-tablet) {
+    margin-left: 0;
+    width: 100%;
+    padding: $spacingXs;
+  }
+
+  .contentWrapper {
+    margin: auto;
+    width: 80%;
+  }
+
+  .dismissBtn {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    top: 0;
+    height: 100%;
+    right: 0;
+    position: absolute;
+  }
+
+  :global .markdown-component {
+    max-width: 100%;
+
+    p {
+      @mixin metaTitleText;
+      line-height: 1.4;
+      color: inherit;
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      line-height: 1.4;
+      padding-left: $spacingNudge;
+    }
+  }
+}
+
+/* IE 11 - tippy top doesn't go full width */
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .component {
+    width: 100vw;
+  }
+}
+
+.loud {
+  @mixin background_blue;
+}
+
+.quiet {
+  @mixin background_alternate;
+}
+
+.blue {
+  @mixin background_blue;
+}
+
+.burgandy {
+  @mixin background_burgandy;
+}
+
+.white {
+  @mixin background_primary;
+}
+
+.pink {
+  @mixin background_pink;
+}
+
+.yellow {
+  @mixin background_yellow;
+}
+
+.grey {
+  @mixin background_alternate;
+}
+
+.promo {
+  @mixin background_promotional;
+}
+
+.light {
+  @mixin text_white;
+  @mixin icon_color_white;
+}
+
+.dark {
+  @mixin text_primary;
+  @mixin icon_color_primary;
+}
+
+.description {
+  @mixin captionDescriptionText;
+  margin-bottom: $spacingXs;
+}
+
+.showDetails, .hideDetails {
+  cursor: pointer;
+  @mixin captionDescriptionText;
+  background-color: transparent;
+  border: none;
+}

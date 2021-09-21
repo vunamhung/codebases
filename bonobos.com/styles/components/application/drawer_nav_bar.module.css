@@ -1,0 +1,87 @@
+@import "../../typography.css";
+@import "../../mixins.css";
+@import "../../design_tokens.css";
+
+.component {
+  @mixin text_primary;
+  @mixin background_primary;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  &.primary {
+    height: $desktopMinifiedHeaderHeight;
+
+    button {
+      height: 60px;
+      line-height: 60px;
+      min-width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+
+    svg {
+      height: 20px;
+    }
+
+    .centerContent {
+      height: 60px;
+      line-height: 60px;
+      svg {
+        width: 200px;
+      }
+    }
+  }
+
+  &.secondary {
+    height: 60px;
+
+    button {
+      height: 60px;
+      line-height: 60px;
+    }
+
+    svg {
+      margin: $spacingSm 0;
+      height: 16px;
+    }
+
+    .centerContent {
+      height: 60px;
+      line-height: 60px;
+      svg {
+        width: 200px;
+      }
+    }
+  }
+
+  button {
+    @mixin metaTitleText;
+    @mixin text_tertiary;
+    position: absolute;
+    top: 0;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 $spacingSm;
+    svg {
+      width: auto;
+      @mixin icon_color_secondary;
+    }
+  }
+}
+
+.centerContent {
+  @mixin subheaderText;
+}
+
+.leftCTA {
+  left: 0;
+}
+
+.rightCTA {
+  right: 0;
+}

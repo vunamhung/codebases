@@ -1,0 +1,7 @@
+@import "../../media.css";
+
+.component {
+  @media(--smartphone) {
+    display: inline-flex;
+  }
+}

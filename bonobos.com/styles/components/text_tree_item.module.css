@@ -1,0 +1,66 @@
+@import "../typography.css";
+@import "../mixins.css";
+
+.component {
+}
+
+.categoryList {
+  padding: $spacingXs 0;
+  @mixin border_bottom_primary;
+}
+
+.item {
+  display: block;
+  padding: $spacingNudge 0;
+  margin-bottom: $spacingNudge;
+  @mixin text_primary;
+  @mixin subNavigationText;
+  font-weight: 400;
+
+  &:hover {
+    @mixin text_primary;
+    cursor: pointer;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  &:after {
+    font-size: 16px;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 $spacingNudge;
+  }
+
+  &.parent {
+    width: 100%;
+    border: none;
+    background: none;
+    appearance: none;
+    text-align: left;
+  }
+
+  &.active {
+    @mixin text_primary;
+    @mixin subNavigationText;
+  }
+
+  &.minus:after {
+    content: '—';
+  }
+
+  &.plus:after {
+    content: '+';
+  }
+}
+
+.children {
+  overflow: hidden;
+  max-height: 0;
+  margin-left: 12px;
+  transition: all .4s ease-in-out;
+
+  &.expanded {
+    max-height: 600px;
+    padding-bottom: $spacingXs;
+  }
+}

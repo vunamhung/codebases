@@ -1,0 +1,22 @@
+@import "./swatch_common.css";
+
+/* requires transforming with postcss-prefix-selector in postcss config to be prefixed with .component :global */
+@import "react-id-swiper/src/styles/css/swiper.css";
+
+.component {
+  overflow: hidden;
+  position: relative;
+
+  &.small {
+    .swatch {
+      width: $smallSize;
+      height: $smallSize;
+    }
+  }
+}
+
+.swatch {
+  margin: 4px 8px;
+  width: $defaultSize;
+  height: $defaultSize;
+}

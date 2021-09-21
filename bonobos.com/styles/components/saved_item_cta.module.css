@@ -1,0 +1,45 @@
+@import "../mixins.css";
+@import "../typography.css";
+
+.component {
+  margin-top: $spacingNudge;
+}
+
+.button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border-width: 0;
+  padding: 0;
+  @mixin icon_color_secondary;
+  @mixin background_transparent_grey;
+  
+  &:hover {
+    @mixin background_primary;
+  }
+
+  .wishlistLink {
+    display: none;
+  }
+}
+
+.link {
+  @mixin button_secondary_outline;
+  @mixin button_medium;
+  width: 100%;
+  border-radius: 100px;
+
+
+  > svg {
+    margin-right: $spacingXs;
+    font-size: $iconSizeSm;
+  }
+}
+
+.carousel {
+  z-index: 1;
+  right: 50px;
+}

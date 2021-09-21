@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"component":"contentful_question_component__3X9yu","questionText":"contentful_question_questionText__-3u0M","questionTitle":"contentful_question_questionTitle__aXFz3","questionDescription":"contentful_question_questionDescription__1ZKSH","answerSection":"contentful_question_answerSection__28rRq","bottomSection":"contentful_question_bottomSection__GNpFl","continueButton":"contentful_question_continueButton__2teTj"};

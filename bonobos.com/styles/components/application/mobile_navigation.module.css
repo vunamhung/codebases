@@ -1,0 +1,80 @@
+@import "../../media.css";
+@import "../../typography.css";
+@import "../../mixins.css";
+
+.component {
+  width: 100%;
+}
+
+.imageTiles {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacingXs 0;
+
+  & > div {
+    width: calc(50% - 4px);
+  }
+}
+
+.rootWrapper {
+  padding-bottom: $spacingXs;
+  @mixin background_secondary;
+
+  ul {
+    padding-bottom: $spacingSm;
+
+    li {
+      @mixin bodyText;
+      @mixin text_brand_accent;
+
+      a {
+        display: block;
+        padding: $spacingSm $spacingMd 0 $spacingMd;
+        color: inherit;
+      }
+    }
+  }
+}
+
+.categoryLinks {
+  margin-bottom: $spacingLg;
+}
+
+.navButton {
+  @mixin subheaderText;
+  @mixin background_primary;
+  @mixin text_tertiary;
+  border: none;
+  @mixin border_bottom_primary;
+  display: flex;
+  align-items: center;
+  padding: $spacingXs $spacingSm;
+  appearance: none;
+  width: 100%;
+  text-align: left;
+  min-height: 60px;
+
+  .imgWrapper {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  span {
+    padding-left: $spacingSm;
+  }
+  svg {
+    margin-left: auto;
+    font-size: 16px;
+  }
+  a {
+    padding-left: $spacingSm;
+    text-decoration: none;
+    @mixin text_tertiary;
+  }
+}
+
+.menuPaddingTop {
+  padding-top: $spacingSm;
+}

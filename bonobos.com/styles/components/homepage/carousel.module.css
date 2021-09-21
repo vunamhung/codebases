@@ -1,0 +1,58 @@
+@import "../../media.css";
+@import "../../mixins.css";
+@import "../../colors.css";
+
+.component {
+  :global {
+    .image-gallery-left-nav, .image-gallery-right-nav {
+      @media (--smartphone) {
+        display: none;
+      }
+    }
+  }
+}
+
+.chevronWrapper {
+  position: absolute;
+}
+
+.chevron {
+  @mixin transitionTwo opacity, color;
+  position: relative;
+  bottom: $spacingXl;
+  left: $spacingLg;
+  z-index: 1;
+  @mixin icon_color_primary;
+
+  svg {
+    font-size: $iconSizeLg;
+    @media (--smartphone-and-tablet) {
+      font-size: $iconSize;
+    }
+  }
+
+  span{
+    padding-left: $spacingSm;
+    @mixin vanityButtonText;
+    @media (--smartphone-and-tablet) {
+      padding-left: $spacingXs;
+    }
+  }
+
+  &.light{
+    color: $white1;
+  }
+}
+
+.bounce {
+  vertical-align: middle;
+  -moz-animation: bounce 5s infinite;
+  -webkit-animation: bounce 5s infinite;
+  animation: bounce 5s infinite;
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-6px);
+  }
+}

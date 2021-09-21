@@ -1,0 +1,9 @@
+@import "../../typography.css";
+
+.content {
+  width: 80%;
+  padding-top: 20px;
+  text-align: center;
+  margin: 0 auto;
+  @mixin metaDescriptionText;
+}

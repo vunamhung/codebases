@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"accountText":"account_content_accountText__fcjzY","signInLinkText":"account_content_signInLinkText__36xla","accountButtonText":"account_content_accountButtonText__2EDUJ","accountIconWrapper":"account_content_accountIconWrapper__3ybqP","accountDropdownButton":"account_content_accountDropdownButton__3_P7J","authWrapper":"account_content_authWrapper__MVFh7"};

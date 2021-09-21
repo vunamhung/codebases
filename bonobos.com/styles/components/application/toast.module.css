@@ -1,0 +1,65 @@
+@import "../../media.css";
+@import "../../mixins.css";
+@import "../../typography.css";
+@import "../../design_tokens.css";
+
+.toast{
+  @mixin metaTitleText;
+  @mixin text_white;
+  @mixin background_alternate;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  min-width: 300px;
+  margin-left: 35px;
+  padding: 15px;
+  position: fixed;
+  opacity: .95;
+  text-align: center;
+  top: $desktopMinifiedHeaderHeight;
+  right: 35px;
+  z-index: 11;
+
+  @media (--smartphone-and-tablet) {
+    margin: 0px;
+    right: 0px;
+    width: 100%;
+    top: $mobileHeaderHeight;
+  }
+
+  &.darkToast{
+    @mixin text_white;
+  }
+
+  &.lightToast{
+    @mixin background_primary;
+    @mixin text_primary;
+  }
+
+  &.alertToast{
+    @mixin background_primary;
+    @mixin text_error;
+  }
+
+  /* React Transitions */
+  &.enter {
+    top: 20px;
+  }
+  &.enterActive {
+    top: $desktopMinifiedHeaderHeight;
+    transition: 300ms ease-in-out;
+    @media (--smartphone-and-tablet) {
+      top: $mobileHeaderHeight;
+    }
+  }
+  &.leave {
+    opacity: 0;
+    top: $desktopMinifiedHeaderHeight;
+    transition: 300ms ease-in-out;
+    @media (--smartphone-and-tablet) {
+      top: $mobileHeaderHeight;
+    }
+  }
+  &.leaveActive {
+    opacity: 0;
+    top: 40px;
+  }
+}

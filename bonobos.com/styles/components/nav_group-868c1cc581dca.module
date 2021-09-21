@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"component":"nav_group_component__14LoG","sliding":"nav_group_sliding__3ex4E","link":"nav_group_link__2_4vw","tabbed":"nav_group_tabbed__2nG92","dark":"nav_group_dark__12K8V","block":"nav_group_block__2F3hM","left":"nav_group_left__2mHb7","right":"nav_group_right__Jc0PO","center":"nav_group_center__2sPbN","swatch":"nav_group_swatch__2odGz"};

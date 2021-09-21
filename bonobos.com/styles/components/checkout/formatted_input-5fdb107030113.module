@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"input":"formatted_input_input__2npCu","error":"formatted_input_error__ylFlI","hint":"formatted_input_hint__1EGCr","errorMessage":"formatted_input_errorMessage__3eQOX","borderless":"formatted_input_borderless__3rOk-","component":"formatted_input_component__MgA1E"};

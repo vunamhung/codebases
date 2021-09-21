@@ -1,0 +1,59 @@
+@import "../mixins.css";
+
+.component {
+  width: 100%;
+  position: relative;
+
+  video {
+    width: 100%;
+    display: block;
+  }
+
+  .descriptionContainer {
+    top: 100%;
+    left: -10000px;
+    height: 1px;
+    width: 1px;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    padding: $spacingMd $spacingMd $spacingSm $spacingMd;
+    cursor: default;
+    @mixin background_alternate;
+
+    &:focus-within {
+      position: absolute;
+      left: 0;
+      z-index: 1;
+      width: auto;
+      height: auto;
+      box-shadow: none;
+      margin: $spacingXs;
+      border-radius: $spacingNudge;
+    }
+
+    .videoDescriptionTitle {
+      @mixin subheaderText;
+      @mixin text_white;
+      padding-bottom: $spacingNudge;
+    }
+
+    .textDescription {
+      @mixin text_primary;
+      @mixin text_white;
+      @mixin metaDescriptionText;
+      overflow: auto;
+
+      .transcriptLink  {
+        @mixin text_white;
+        @mixin linkText;
+        display: inline-block;
+        margin: $spacingSm;
+        width: auto;
+        height: auto;
+        padding: $spacingXs;
+      }
+    }
+  }
+}

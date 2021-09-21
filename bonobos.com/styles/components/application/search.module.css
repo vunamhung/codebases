@@ -1,0 +1,85 @@
+@import "../../typography.css";
+@import "../../mixins.css";
+@import "../../colors.css";
+
+.searchWrapper {
+  background-color: transparent;
+  position: relative;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+
+  @media (--smartphone-and-tablet) {
+    opacity: 1;
+    height: 60px;
+    width: calc(100% - 56px);
+  }
+
+  .input input {
+    @mixin background_secondary;
+    border: 0;
+    border-radius: 100px;
+    @media (--desktop) {
+      height: 35px;
+      @mixin text_primary;
+      padding: 0 4px 0 37px;
+      cursor: auto;
+      width: 12vw;
+    }
+    @media (--smartphone-and-tablet) {
+      margin-top: $spacingXs;
+      padding-left: $spacingXl;
+      width: calc(100% - 24px);
+      height: 44px;
+      -webkit-appearance: none;
+
+      &:focus {
+        border: none;
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (--smartphone-and-tablet) {
+    position: sticky;
+    display: block;
+    top: 46px;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    z-index: 20;
+    overflow: hidden;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  label {
+    display: none;
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  left: $spacingXs;
+  fill: $grey6;
+  top: 6px;
+
+  @media (--smartphone-and-tablet) {
+    left: -65px;
+    top: 19px;
+  }
+  svg {
+    font-size: 16px;
+  }
+}
+
+.form {
+  @media (--desktop) {
+    position: absolute;
+    right: 0;
+    background: transparent;
+  }
+}

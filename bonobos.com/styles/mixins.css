@@ -1,0 +1,458 @@
+@import "./colors.css";
+@import "./media.css";
+@import "./typography.css";
+
+/*
+ * USE THESE MIXINS - if you are missing a value, consult with the design team
+ * You can add mixins here for additional/new components, aim for reusability
+ * and consistency.
+ */
+ /* ==== Text ==== */
+@define-mixin text_primary { color: $grey7; }
+@define-mixin text_primary_alternate { color: $grey1; }
+@define-mixin text_secondary { color: $grey5; }
+@define-mixin text_secondary_alternate { color: $grey3; }
+@define-mixin text_tertiary { color: $grey5; }
+@define-mixin text_tertiary_alternate { color: $grey4; }
+@define-mixin text_disabled { color: $grey3; }
+@define-mixin text_disabled_alternate { color: $grey5; }
+@define-mixin text_brand { color: $accent1; }
+@define-mixin text_brand_accent { color: $accent2; }
+@define-mixin text_error { color: $error; }
+@define-mixin text_success { color: $success; }
+@define-mixin text_promo { color: $promo; }
+@define-mixin text_white { color: $white1; }
+@define-mixin text_link {
+  position: relative;
+  color: $grey7;
+  text-decoration: none;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: $grey7;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+  &:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+/* ==== Backgrounds ==== */
+/* Light ---> Dark */
+/* Primary -> Secondary -> Tertiary -> Alternate */
+@define-mixin background_primary { background-color: $white1; }
+@define-mixin background_primary__disabled { background-color: $grey3; }
+@define-mixin background_secondary { background-color: $grey1; }
+@define-mixin background_secondary__disabled { background-color: $grey3; }
+@define-mixin background_tertiary { background-color: $grey2; }
+@define-mixin background_alternate { background-color: $grey7; }
+@define-mixin background_alternate__disabled { background-color: $grey3; }
+@define-mixin background_brand { background-color: $accent1; }
+@define-mixin background_brand_accent { background-color: $accent2; }
+@define-mixin background_brand__hover { background-color: $grey6; }
+
+@define-mixin background_error { background-color: $error; }
+@define-mixin background_error__hover { background-color: $error2; }
+@define-mixin background_success { background-color: $success; }
+@define-mixin background_success__hover { background-color: $success2; }
+
+@define-mixin background_promotional { background-color: $promotional; }
+@define-mixin background_blue { background-color: $blue; }
+@define-mixin background_burgandy { background-color: $burgandy; }
+@define-mixin background_pink { background-color: $pink; }
+@define-mixin background_yellow { background-color: $yellow; }
+
+@define-mixin background_transparent { background-color: transparent; }
+@define-mixin background_transparent_grey { background-color: $transparentGrey1; }
+@define-mixin background_transparent_white { background-color: $white2}
+@define-mixin background_loading { background-color: $grey4; }
+
+/* ==== Borders ==== */
+@define-mixin border_primary { border: 1px solid $grey2; }
+@define-mixin border_primary__hover { border-color: $grey3; }
+@define-mixin border_primary__active { border: 1px solid $grey4; }
+@define-mixin border_bottom_primary { border-bottom: 1px solid $grey2; }
+@define-mixin border_top_primary { border-top: 1px solid $grey2; }
+@define-mixin border_right_primary { border-right: 1px solid $grey2; }
+@define-mixin border_left_primary { border-left: 1px solid $grey2; }
+@define-mixin border_primary__heavy { border: 2px solid $grey2; }
+
+@define-mixin border_secondary { border: 1px solid $grey3; }
+@define-mixin border_secondary__hover { border-color: $grey5; }
+@define-mixin border_secondary__active { border: 1px solid $grey7; }
+@define-mixin border_bottom_secondary { border-bottom: 1px solid $grey3; }
+@define-mixin border_top_secondary { border-top: 1px solid $grey3; }
+@define-mixin border_right_secondary { border-right: 1px solid $grey3; }
+@define-mixin border_left_secondary { border-left: 1px solid $grey3; }
+@define-mixin border_secondary__heavy { border: 2px solid $grey3; }
+
+@define-mixin border_alternate { border: 1px solid $white1; }
+
+@define-mixin border_brand { border: 1px solid $accent1; }
+@define-mixin border_brand__heavy { border: 2px solid $accent1; }
+@define-mixin border_brand__hover { border: 1px solid $accent2; }
+@define-mixin border_input { border: 1px solid $grey3; }
+@define-mixin border_input__hover { border: 1px solid $accent2; }
+@define-mixin border_transparent { border: 1px solid transparent; }
+@define-mixin border_bottom_transparent { border-bottom: 1px solid transparent; }
+@define-mixin border_bottom_dark { border-bottom: 1px solid $grey7; }
+@define-mixin border_bottom_dark_strong { border-bottom: 3px solid $grey7; }
+@define-mixin border_error { border: 1px solid $error; }
+
+/* ==== Spacing ==== */
+$spacingNudge: 4px; /* Use this sparingly, this is often used for spacing between icon and text */
+$spacingXs: 8px;
+$spacingSm: 16px;
+$spacingMd: 24px;
+$spacingLg: 32px;
+$spacingXl: 48px;
+$spacingHuge: 64px;
+
+/* ==== Ada focus ==== */
+$outline_ada_focus: -webkit-focus-ring-color auto 5px;
+/* Make the default focus the default broswer focus. Use the Chrome Default focus as a backup */
+@define-mixin default_ada_focus {
+  outline: #5E9ED6 auto 5px;
+  outline: $outline_ada_focus;
+}
+@define-mixin accessible_button {
+  -webkit-appearance: none;
+  background: none;
+  padding: unset;
+  border: none;
+  text-align: inherit;
+  font-family: inherit;
+  cursor: inherit;
+}
+
+/* Utility functions, try not to use these, instead use the single-line mixins */
+@define-mixin padding_vertical $size {
+  padding-top: $size;
+  padding-bottom: $size;
+}
+@define-mixin padding_horizontal $size {
+  padding-right: $size;
+  padding-left: $size;
+}
+@define-mixin margin_vertical $size {
+  margin-top: $size;
+  margin-bottom: $size;
+}
+@define-mixin margin_horizontal $size {
+  margin-right: $size;
+  margin-left: $size;
+}
+/* Use these mixins */
+@define-mixin padding__xs { padding: $spacingXs; }
+@define-mixin padding__sm { padding: $spacingSm; }
+@define-mixin padding__md { padding: $spacingMd; }
+@define-mixin padding__lg { padding: $spacingLg; }
+@define-mixin padding__xl { padding: $spacingXl; }
+@define-mixin padding__huge { padding: $spacingHuge; }
+
+@define-mixin padding_vertical__0 { @mixin padding_vertical 0; }
+@define-mixin padding_vertical__xs { @mixin padding_vertical $spacingXs; }
+@define-mixin padding_vertical__sm { @mixin padding_vertical $spacingSm; }
+@define-mixin padding_vertical__md { @mixin padding_vertical $spacingMd; }
+@define-mixin padding_vertical__lg { @mixin padding_vertical $spacingLg; }
+@define-mixin padding_vertical__xl { @mixin padding_vertical $spacingXl; }
+@define-mixin padding_vertical__huge { @mixin padding_vertical $spacingHuge; }
+
+@define-mixin padding_horizontal__0 { @mixin padding_horizontal 0; }
+@define-mixin padding_horizontal__xs { @mixin padding_horizontal $spacingXs; }
+@define-mixin padding_horizontal__sm { @mixin padding_horizontal $spacingSm; }
+@define-mixin padding_horizontal__md { @mixin padding_horizontal $spacingMd; }
+@define-mixin padding_horizontal__lg { @mixin padding_horizontal $spacingLg; }
+@define-mixin padding_horizontal__xl { @mixin padding_horizontal $spacingXl; }
+@define-mixin padding_horizontal__huge { @mixin padding_horizontal $spacingHuge; }
+
+@define-mixin margin__xs { margin: $spacingXs; }
+@define-mixin margin__sm { margin: $spacingSm; }
+@define-mixin margin__md { margin: $spacingMd; }
+@define-mixin margin__lg { margin: $spacingLg; }
+@define-mixin margin__xl { margin: $spacingXl; }
+@define-mixin margin__huge { margin: $spacingHuge; }
+
+@define-mixin margin_vertical__auto { @mixin margin_vertical auto; }
+@define-mixin margin_vertical__0 { @mixin margin_vertical 0; }
+@define-mixin margin_vertical__xs { @mixin margin_vertical $spacingXs; }
+@define-mixin margin_vertical__sm { @mixin margin_vertical $spacingSm; }
+@define-mixin margin_vertical__md { @mixin margin_vertical $spacingMd; }
+@define-mixin margin_vertical__lg { @mixin margin_vertical $spacingLg; }
+@define-mixin margin_vertical__xl { @mixin margin_vertical $spacingXl; }
+@define-mixin margin_vertical__huge { @mixin margin_vertical $spacingHuge; }
+
+@define-mixin margin_horizontal__auto { @mixin margin_horizontal auto; }
+@define-mixin margin_horizontal__0 { @mixin margin_horizontal 0; }
+@define-mixin margin_horizontal__xs { @mixin margin_horizontal $spacingXs; }
+@define-mixin margin_horizontal__sm { @mixin margin_horizontal $spacingSm; }
+@define-mixin margin_horizontal__md { @mixin margin_horizontal $spacingMd; }
+@define-mixin margin_horizontal__lg { @mixin margin_horizontal $spacingLg; }
+@define-mixin margin_horizontal__xl { @mixin margin_horizontal $spacingXl; }
+@define-mixin margin_horizontal__huge { @mixin margin_horizontal $spacingHuge; }
+
+/* ==== Icon Styles ==== */
+/* Fill and stroke are used for custom SVG icons */
+@define-mixin fill_primary { fill: $accent1; }
+@define-mixin fill_secondary { fill: $grey4; }
+@define-mixin fill_disabled { fill: $grey3; }
+@define-mixin fill_white { fill: $white1; }
+@define-mixin fill_dark { fill: $grey7; }
+@define-mixin stroke_primary { stroke: $accent1; }
+@define-mixin stroke_secondary { stroke: $grey4; }
+@define-mixin stroke_disabled { stroke: $grey3; }
+
+/* Color is used for Font Awesome icons */
+@define-mixin icon_color_primary { color: $accent1; }
+@define-mixin icon_color_secondary { color: $grey4; }
+@define-mixin icon_color_disabled { color: $grey3; }
+@define-mixin icon_color_tertiary { color: $grey2; }
+@define-mixin icon_color_white { color: $white1; }
+$iconSize: 22px;
+$iconSizeMd: 18px;
+$iconSizeSm: 16px;
+$iconSizeLg: 32px;
+
+@define-mixin paypal_light_blue_bg { background-color: $paypalLightBlue; }
+
+/* ==== Animations ==== */
+@define-mixin transition $type, $time: .3s {
+  -webkit-transition: $type $time;
+  -o-transition: $type $time;
+  -moz-transition: $type $time;
+  transition: $type $time;
+}
+
+@define-mixin transitionTwo $type1, $type2, $time: .3s {
+  -webkit-transition: $type1 $time, $type2 $time;
+  -o-transition: $type1 $time, $type2 $time;
+  -moz-transition: $type1 $time, $type2 $time;
+  transition: $type1 $time, $type2 $time;
+}
+
+@define-mixin transitionAll $time: .3s {
+  @mixin transition all $time;
+}
+
+@define-mixin transitionWithEffect $type, $effect, $time: .3s {
+  -webkit-transition: $type $time $effect;
+  -o-transition: $type $time $effect;
+  -moz-transition: $type $time $effect;
+  transition: $type $time $effect;
+}
+
+@define-mixin transitionTwoWithEffect $type1, $type2, $effect, $time: .3s,  {
+  -webkit-transition: $type1 $time $effect, $type2 $time $effect;
+  -o-transition: $type1 $time $effect, $type2 $time $effect;
+  -moz-transition: $type1 $time $effect, $type2 $time $effect;
+  transition: $type1 $time $effect, $type2 $time $effect;
+}
+
+/* ==== Buttons Sizes ==== */
+@define-mixin button_xsmall {
+  @mixin buttonText;
+  height: 42px;
+  line-height: 42px;
+}
+
+@define-mixin button_small {
+  @mixin buttonText;
+  height: 48px;
+  line-height: 48px;
+}
+
+@define-mixin button_medium {
+  @mixin buttonText;
+  height: 56px;
+  line-height: 56px;
+}
+
+@define-mixin button_large {
+  @mixin buttonText;
+  height: 60px;
+  line-height: 60px;
+}
+
+/* ==== Buttons Styles ==== */
+@define-mixin button_primary {
+  @mixin background_alternate;
+  @mixin text_primary_alternate;
+  @mixin border_transparent;
+  &:hover {
+    @mixin background_brand__hover;
+  }
+  &:disabled {
+    @mixin background_alternate__disabled;
+    @mixin text_primary_alternate;
+  }
+}
+
+@define-mixin button_primary_outline {
+  @mixin transitionTwo background-color, color;
+  @mixin text_brand;
+  background: transparent;
+  border: 1px solid $accent1;
+  &:hover {
+    @mixin border_brand;
+  }
+  &:disabled {
+    @mixin background_primary__disabled;
+    @mixin text_white;
+  }
+}
+
+@define-mixin button_primary_transparent{
+  background: transparent;
+  @mixin text_primary;
+}
+
+@define-mixin button_secondary {
+  @mixin text_white;
+  @mixin border_transparent;
+  background: $grey5;
+  &:hover {
+    background: $grey4;
+  }
+  &:disabled {
+    @mixin background_primary__disabled;
+    @mixin text_white;
+  }
+}
+
+@define-mixin button_secondary_outline {
+  @mixin transitionTwo background-color, color;
+  @mixin text_primary;
+  background: transparent;
+  @mixin border_input;
+  @mixin background_primary;
+  &:hover {
+    @mixin border_secondary;
+  }
+  &:disabled {
+    @mixin background_primary__disabled;
+    @mixin text_white;
+  }
+}
+
+@define-mixin button_secondary_transparent {
+  background: transparent;
+  @mixin text_secondary;
+}
+
+@define-mixin button_alternate {
+  @mixin transitionTwo background-color, color;
+  @mixin background_primary;
+  @mixin text_primary;
+  @mixin border_transparent;
+  &:hover {
+    @mixin text_primary;
+  }
+  &:disabled {
+    @mixin background_primary__disabled;
+    @mixin text_primary;
+  }
+}
+
+@define-mixin button_alternate_outline {
+  @mixin background_transparent;
+  @mixin border_alternate;
+  @mixin text_primary_alternate;
+  &:hover {
+
+  }
+}
+
+@define-mixin button_alternate_transparent {
+  background: transparent;
+  @mixin text_primary_alternate;
+}
+
+@define-mixin button_warning {
+  @mixin transitionTwo background-color, color;
+  @mixin background_error;
+  @mixin text_primary_alternate;
+  @mixin border_transparent;
+  &:hover {
+    @mixin background_error__hover;
+  }
+  &:disabled {
+    @mixin background_primary__disabled;
+    &:focus, &:hover {
+      background: transparent;
+      @mixin background_primary__disabled;
+    }
+  }
+}
+
+@define-mixin button_warning_link {
+  @mixin metaTitleText;
+  @mixin border_transparent;
+  @mixin text_error;
+  background: transparent;
+
+  &:disabled {
+    @mixin text_disabled;
+  }
+}
+
+@define-mixin button_cancel_link {
+  @mixin metaTitleText;
+  @mixin border_transparent;
+  @mixin text_secondary;
+  background: transparent;
+
+  &:disabled {
+    @mixin text_disabled;
+  }
+}
+
+/* ==== Carets ==== */
+@define-mixin caret-down $size, $posX, $posY {
+  &:after{
+    content:'';
+    width: 0;
+    height: 0;
+    border-left: $(size) solid transparent;
+    border-right: $(size) solid transparent;
+    border-top: $(size) solid $grey7;
+    top: $posY;
+    right: $posX;
+    position: relative;
+  }
+}
+@define-mixin caret-down-menu {
+  @mixin caret-down 5px, -5px, 11px;
+}
+
+/* ===== General Helpers ===== */
+@define-mixin sticky $pos {
+  top: $pos;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+}
+
+@define-mixin hide_on_desktop{
+  @media (--desktop) {
+      display: none;
+  }
+}
+
+@define-mixin hide_on_smartphone_and_tablet{
+  @media (--smartphone-and-tablet) {
+      display: none;
+  }
+}

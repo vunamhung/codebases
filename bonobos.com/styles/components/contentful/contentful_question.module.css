@@ -1,0 +1,63 @@
+@import "../../typography.css";
+@import "../../mixins.css";
+
+.component {
+  width:100%;
+  padding: 0 $spacingMd;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .questionText {
+    padding-left:12px;
+    padding-right:12px;
+
+    .questionTitle {
+     @mixin titleText;
+     @mixin text_primary;
+    }
+    .questionDescription {
+      @mixin text_primary;
+      @mixin paragraphText;
+      margin-top:6px;
+    }
+  }
+
+  .answerSection {
+    @mixin text_primary;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    padding-bottom:24px;
+    padding-top:24px;
+    text-align:center;
+    width: 100%;
+    align-items: flex-start;
+    @media (--smartphone-and-tablet) {
+      padding-bottom: 100px;
+    }
+  }
+
+  .bottomSection {
+    padding-bottom:30px;
+    padding-top:20px;
+
+    .continueButton {
+      @mixin background_primary;
+      font-size:16px;
+      font-weight:600;
+      height:48px;
+      width:240px;
+    }
+
+    @media (--smartphone-and-tablet) {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      @mixin background_primary;
+      text-align: center;
+    }
+  }
+}

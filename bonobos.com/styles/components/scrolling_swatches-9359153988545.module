@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"component":"scrolling_swatches_component__3EiJb","swiper-pagination-bullet":"scrolling_swatches_swiper-pagination-bullet__2GBEv","small":"scrolling_swatches_small__18G8e","swatch":"scrolling_swatches_swatch__3UhuS"};

@@ -1,0 +1,72 @@
+@import "../typography.css";
+@import "../mixins.css";
+@import "../colors.css";
+
+
+.component {
+  padding: 0 $spacingXs 0 0;
+  display: flex;
+  flex-direction: row;
+  @mixin hide_on_desktop
+}
+
+.linksContainer {
+  font-size: 14px;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: flex-start;
+
+  &:first-child {
+    @mixin border_top_primary;
+  }
+}
+
+.link {
+  padding: 20px 0 20px 20px;
+  @mixin border_bottom_primary;
+  cursor: pointer;
+  @mixin typeSecondary;
+  line-height: 30px;
+  font-size: 16px;
+  @mixin text_primary;
+  display: block;
+}
+
+.selected {
+  &:before {
+    content: '\2713';
+    padding-right: 10px;
+  }
+}
+
+.toggleButton {
+  h1 {
+    @mixin typeSecondary;
+    font-size: 16px;
+  }
+  @mixin border_primary;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0;
+  height: 50px;
+  width: 100%;
+  @mixin background_primary;
+  align-items: center;
+}
+
+.chevron {
+  display: inline-block;
+  padding-right: 16px;
+  svg {
+    transition: transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform-origin: center;
+    transform: rotate(0.75turn);
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+
+    path {
+      stroke: $black;
+    }
+  }
+}

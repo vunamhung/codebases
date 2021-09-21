@@ -1,0 +1,51 @@
+@import "../mixins.css";
+
+.component {
+  &.sliding {
+    padding: 10px 0;
+    text-align: center;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  &.link {
+    padding: 10px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  &.tabbed {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    @mixin background_primary__disabled;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  &.dark {
+    padding: 10px 0 0 0;
+  }
+
+  &.block {
+    width: 100%;
+  }
+
+  &.left {
+    text-align: left;
+  }
+
+  &.right {
+    text-align: right;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.swatch {
+    display: flex;
+    width: 100%;
+    @mixin background_primary__disabled;
+  }
+}

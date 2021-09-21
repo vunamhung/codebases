@@ -1,0 +1,5 @@
+@import "../mixins.css";
+
+.component {
+  @mixin hide_on_smartphone_and_tablet;
+}

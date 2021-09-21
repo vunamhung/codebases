@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"component":"promo_modal_component__2uyY3","headerContainer":"promo_modal_headerContainer__2izdb","headerText":"promo_modal_headerText__2pzK-","name":"promo_modal_name__3_fm9","discountAmount":"promo_modal_discountAmount__R9qIL","promoCode":"promo_modal_promoCode__2mQck","headerDetails":"promo_modal_headerDetails__18cl8","detailsBox":"promo_modal_detailsBox__rOBHq","detailsPromoCode":"promo_modal_detailsPromoCode__1jUR8","promoBody":"promo_modal_promoBody__2S6wc"};

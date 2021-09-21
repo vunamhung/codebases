@@ -1,0 +1,24 @@
+@import "../../typography.css";
+@import "../../mixins.css";
+
+.menuLink {
+  @mixin text_primary;
+  display: block;
+  appearance: none;
+  padding: $spacingXs $spacingNudge $spacingSm;
+  margin: 0 $spacingXs;
+  border: none;
+  @mixin navigationText;
+  text-transform: capitalize;
+  background-color: transparent;
+  @mixin border_bottom_transparent;
+  z-index: 1;
+
+  @media (--smartphone-and-tablet) {
+    display: none;
+  }
+
+  &.active {
+    @mixin border_bottom_dark;
+  }
+}

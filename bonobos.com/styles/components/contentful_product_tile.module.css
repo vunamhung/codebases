@@ -1,0 +1,10 @@
+@import "../mixins.css";
+
+.contentfulComponent {
+  min-height: 400px;
+  width: 100%;
+
+  .productTile {
+    width: 100%;
+  }
+}

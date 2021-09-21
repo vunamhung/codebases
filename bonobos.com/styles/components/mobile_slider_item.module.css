@@ -1,0 +1,45 @@
+@import "../typography.css";
+@import "../mixins.css";
+@import "../colors.css";
+
+.component {
+  display: flex;
+  text-align: center;
+  max-width: 315px;
+  margin: $spacingXs 10px;
+  -webkit-tap-highlight-color: transparent;
+
+  button {
+    appearance: none;
+    border: none;
+  }
+}
+
+.image {
+  display: block;
+  width: 100%;
+}
+
+.text {
+  @mixin captionTitleText;
+  text-transform: capitalize;
+  padding: 2px;
+  width: 100%;
+  color: #232323;
+}
+
+.content {
+  align-items: center;
+}
+
+.round {
+  .mobileSliderImgWrapper {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    img {
+      border-radius: 50%;
+    }
+  }
+}
+

@@ -1,0 +1,9 @@
+.component {
+  margin-top: -5px;
+  margin-bottom: -10px;
+}
+
+.leftSliderPadding{
+  display: flex;
+  padding-left: 6px;
+}

@@ -1,0 +1,93 @@
+@import "../../media.css";
+@import "../../typography.css";
+@import "../../mixins.css";
+
+.component {
+  position: relative;
+  height: 525px;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 45%;
+
+  @media (--tablet-and-desktop) {
+    height: 550px;
+    padding-top: 25%;
+  }
+}
+
+.ctaContainer {
+  padding: 15px 0;
+}
+
+.cta {
+  display: inline-block;
+  padding: 15px 40px;
+  @mixin metaTitleText;
+  @mixin background_alternate;
+  border: 1px solid transparent;
+  @mixin text_white;
+  text-transform: uppercase;
+
+  &:focus, &:hover {
+    @mixin background_brand;
+    cursor: pointer;
+  }
+}
+
+.copy {
+  max-width: 900px;
+  position: absolute;
+  width: 100%;
+
+  @media (--smartphone) {
+    padding: 0 20px;
+  }
+
+  @media (--tablet-and-desktop) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.title {
+  text-transform: none;
+  cursor: default;
+  margin-bottom: 15px;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  white-space: normal;
+
+  @media (--tablet-and-desktop) {
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+}
+
+.description {
+  @mixin subheaderText;
+  margin-bottom: 15px;
+  white-space: normal;
+
+  @media (--tablet-and-desktop) {
+    line-height: 1.5;
+  }
+}
+
+.secondary {
+  .copy {
+    .title {
+      @mixin headerText;
+      text-transform: none;
+    }
+  }
+}
+
+.center {
+  .copy {
+    @media (--tablet-and-desktop) {
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+}

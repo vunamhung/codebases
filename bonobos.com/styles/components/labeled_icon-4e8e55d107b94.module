@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"component":"labeled_icon_component__1kyZf","vertical":"labeled_icon_vertical__6IvV8","children":"labeled_icon_children__1NGdu","horizontal":"labeled_icon_horizontal__8HdBP","icon":"labeled_icon_icon__3OYX2","shouldHover":"labeled_icon_shouldHover__3jG0K","light":"labeled_icon_light__37KkA"};

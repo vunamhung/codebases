@@ -1,0 +1,200 @@
+@import "../mixins.css";
+@import "./swatch_common.css";
+@import "../colors.css";
+
+@define-mixin sizeDefault {
+  background-size: defaultSize;
+  height: $defaultSize;
+  width: $defaultSize;
+}
+
+@define-mixin sizeSmall {
+  background-size: $smallSize;
+  height: $smallSize;
+  width: $smallSize;
+}
+
+@define-mixin sizeSkinnyDefault {
+  background-size: $skinnyDefaultSize;
+  height: $skinnyDefaultSize;
+  width: $skinnyDefaultSize;
+}
+
+@define-mixin sizeSkinnySmall {
+  background-size: $skinnySmallSize;
+  height: $skinnySmallSize;
+  width: $skinnySmallSize;
+}
+
+@define-mixin borderSkinny {
+  @mixin border_brand;
+}
+
+@define-mixin checkedBorderSkinny {
+  @mixin borderSkinny;
+  box-shadow: inset 0 0 0 5px $grey1;
+}
+
+@define-mixin hoverBorderSkinny {
+  @mixin borderSkinny;
+  box-shadow: inset 0 0 0 6px $grey1;
+}
+
+.component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-height: $defaultSize;
+  max-width: $defaultSize;
+
+  &.small {
+    max-height: $smallSize;
+    max-width: $smallSize;
+
+    .swatch {
+      @mixin sizeSmall;
+    }
+
+    .noSymbolIcon {
+      height: $smallSize;
+      width: $smallSize;
+    }
+  }
+
+  &.disabled {
+    position: relative;
+
+    .noSymbolIcon {
+      display: block;
+
+      svg {
+        font-size: $defaultSize;
+        overflow: visible; /* unset overflow to fix Firefox clipping issue */
+        position: absolute;
+      }
+      .innerIcon {
+        @mixin icon_color_tertiary;
+        top: 1px;
+        left: 1px;
+        font-size: $defaultInnerSize;
+      }
+      .outerIcon {
+        @mixin icon_color_secondary;
+      }
+      &.small {
+        svg {
+          font-size: $smallSize;
+        }
+        .innerIcon {
+          font-size: $smallInnerSize;
+        }
+      }
+    }
+  }
+
+  &.skinny {
+    .swatch {
+      border: none;
+      @mixin sizeSkinnyDefault;
+    }
+
+    &.small {
+      .swatch {
+        border: none;
+        @mixin sizeSkinnySmall;
+      }
+    }
+  }
+}
+
+.swatch {
+  display: inline-block;
+  border-radius: 50%;
+  background-position: center;
+  @mixin sizeDefault;
+}
+
+.checked {
+  .swatch {
+    border: 2px solid $accent1;
+    box-shadow: inset 0 0 0 3px $grey1;
+    transition-timing-function: ease-in-out;
+    transition: .075s;
+  }
+
+  &.skinny .swatch {
+    @mixin checkedBorderSkinny;
+    @mixin sizeDefault;
+  }
+
+  &.small.skinny .swatch {
+    @mixin checkedBorderSkinny;
+    @mixin sizeSmall;
+  }
+}
+
+.unchecked {
+  .swatch {
+    @mixin border_primary__hover;
+    transition: .075s;
+  }
+}
+
+.noSymbolIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: $defaultSize;
+  width: $defaultSize;
+  display: none;
+  svg {
+    @mixin icon_color_primary;
+  }
+}
+
+/* Hover styles should only be on non-touch device. Because on touch devices "click" would
+   implicitly puts the element in "hover" state butthere isn't a explicit way to "blur" elements,
+   so the "hover" styles just linger on the elements. */
+[data-touch-events-supported="false"] {
+  .interactable {
+    .swatch {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &.checked {
+      .swatch {
+        &:hover {
+          border: 2px solid $accent2;
+          box-shadow: inset 0 0 0 3px $grey1;
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    &.unchecked {
+      .swatch {
+        &:hover {
+          border: 2px solid $accent1;
+          box-shadow: inset 0 0 0 3px $grey1;
+          transform: scale(1.2);
+          transition-timing-function: ease-in-out;
+        }
+      }
+    }
+
+    &.skinny.checked .swatch:hover,
+    &.skinny.unchecked .swatch:hover {
+      @mixin hoverBorderSkinny;
+      @mixin sizeDefault;
+    }
+
+    &.small.skinny.checked .swatch:hover,
+    &.small.skinny.unchecked .swatch:hover {
+      @mixin hoverBorderSkinny;
+      @mixin sizeSmall;
+    }
+  }
+}

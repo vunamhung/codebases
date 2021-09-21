@@ -1,0 +1,48 @@
+@import "../typography.css";
+@import "../mixins.css";
+
+.component {
+  text-decoration: none;
+}
+
+.vertical {
+  display: inline-block;
+
+  & > .children {
+    text-align: center;
+  }
+}
+
+.horizontal {
+  display: flex;
+
+  & > .icon {
+    padding-top: 1px;
+  }
+
+  & > .children {
+    padding-left: $spacingSm;
+  }
+}
+
+.icon {
+  /* TODO: move to each place this is used */
+  max-height: 30px;
+}
+
+.children {
+  @mixin metaDescriptionText;
+  @mixin text_secondary;
+
+  &.shouldHover:hover {
+    @mixin text_primary;
+  }
+}
+
+.light {
+  @mixin text_primary;
+
+  &.shouldHover:hover {
+    @mixin text_tertiary;
+  }
+}

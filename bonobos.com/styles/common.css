@@ -1,0 +1,185 @@
+@import "./media.css";
+@import "./typography.css";
+@import "./colors.css";
+@import "./mixins.css";
+@import "./utils/salesforce_live_agent.css";
+
+@import-normalize;
+
+/* Apply border-box to all elements */
+*, *:before, *:after { box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+}
+
+body, input, button, a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  &.modal-open {
+    overflow: hidden;
+    position: relative;
+
+    @media (--smartphone-and-tablet) {
+      position: fixed;
+      overflow-x: hidden;
+      overflow-y: scroll !important;
+    }
+  }
+}
+
+button {
+  -webkit-appearance: button;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* Disable focus states normally. */
+[data-keyboard="false"] {
+  *:focus {
+    outline: unset;
+    box-shadow: unset;
+  }
+  textarea:focus,
+  input:focus {
+    @mixin border_brand;
+  }
+}
+
+.megaText{
+  @mixin megaText;
+}
+
+.displayText{
+  @mixin displayText;
+}
+
+.headerText {
+  @mixin headerText;
+}
+
+.subheaderText {
+  @mixin subheaderText;
+}
+
+.paragraphText {
+  @mixin paragraphText;
+}
+
+.bodyText {
+  @mixin bodyText;
+}
+
+.metaDescriptionText {
+  @mixin metaDescriptionText;
+}
+
+.metaTitleText {
+  @mixin metaTitleText;
+}
+
+.captionDescriptionText {
+  @mixin captionDescriptionText;
+}
+
+.captionTitleText {
+  @mixin captionTitleText;
+}
+
+.vanityButtonText {
+  @mixin vanityButtonText;
+}
+
+.buttonText {
+  @mixin buttonText;
+}
+
+.linkText {
+  @mixin linkText;
+}
+
+/* Global FontAwesome Icon styles */
+.svg-inline--fa {
+  font-size: $iconSize;
+  /* This width is overridden by Font Awesome on client-side, but this visibly hides the icons server-side before render */
+  width: 0;
+  /* This disables the tooltip in browsers but still persists the accessibility helper text */
+  pointer-events: none;
+}
+
+@define-mixin clearfix {
+  &:before {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@define-mixin list-with-tiles {
+  list-style: none;
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@define-mixin list-tile {
+  float: left;
+  padding: 0 1%;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/*IE11 support for sticky alternative*/
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .mainContent {
+    flex: 1 0 auto;
+  }
+  .mainContentContainer {
+    margin-top: 60px;
+  }
+}
+
+/* IE11 Hack for no flexbox support */
+@media all and (-ms-high-contrast:none) {
+  *::-ms-backdrop, .applicationLayout {
+    display: block;
+  }
+}
+
+.grecaptcha-badge {
+  width: 0px!important;
+  height: 0px!important;
+  overflow: hidden;
+}
+
+.pca {
+  .pcaautocomplete { box-shadow: none; }
+  .pcaitem { padding: $spacingSm $spacingXs; }
+}

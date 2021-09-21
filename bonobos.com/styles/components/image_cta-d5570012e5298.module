@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"component":"image_cta_component__2WRgr","image":"image_cta_image__1RyXl","text":"image_cta_text__2vJfJ","light":"image_cta_light__3nak_","large":"image_cta_large__14tjs","dark":"image_cta_dark__29FWH"};

@@ -1,0 +1,37 @@
+@import "../typography.css";
+@import "../mixins.css";
+
+.component {
+}
+
+.children {
+  @mixin captionTitleText;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  @mixin text_white;
+  @mixin background_brand;
+}
+
+.medium {
+  .children {
+    @mixin captionTitleText;
+    padding: 5px 10px;
+  }
+}
+
+.small {
+  .children {
+    @mixin captionTitleText;
+    padding: 2px 8px;
+  }
+}
+
+.adaptive {
+  .children {
+    @mixin metaDescriptionText;
+    padding: 5px 10px;
+    width: 75%;
+    margin-left: 11%;
+  }
+}

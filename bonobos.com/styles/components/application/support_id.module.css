@@ -1,0 +1,41 @@
+@import "../../typography.css";
+@import "../../mixins.css";
+
+.component {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    appearance: none;
+    border: none;
+  }
+
+  input {
+    @mixin metaTitleText;
+    @mixin text_primary;
+    font-weight: 600;
+    appearance: none;
+    background-color: white;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    color: inherit;
+    width: 100%;
+  }
+}
+
+.supportIDButton {
+  @mixin button_alternate_transparent;
+  @mixin metaTitleText;
+  text-decoration: underline;
+}
+
+.copyButton {
+  @mixin button_primary_transparent;
+  @mixin metaTitleText;
+}
+
+.message {
+  @mixin metaDescriptionText;
+  padding: $spacingSm $spacingNudge;
+}

@@ -1,0 +1,27 @@
+@import "../../media.css";
+@import "../../typography.css";
+@import "../../mixins.css";
+@import "../../colors.css";
+
+.contentfulBlockCard1 {
+    @mixin border_primary;
+    background-color: #ffffff;
+    border-radius: $spacingNudge;
+}
+
+.contentfulBlockCard1:hover {
+    box-shadow: 0 0 2px 0.5px rgba(21,21,21,0.05), 0 1px 5px 0 rgba(21,21,21,0.15);
+    border-color: transparent;
+}
+
+.borderBottomBrand {
+    @mixin border_bottom_dark;
+}
+
+.borderBottomBrandStrong {
+    @mixin border_bottom_dark_strong;
+}
+
+.borderPrimary {
+    @mixin border_primary;
+}

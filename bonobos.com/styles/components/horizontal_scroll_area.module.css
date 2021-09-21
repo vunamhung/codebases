@@ -1,0 +1,51 @@
+@import "../mixins.css";
+@import "../media.css";
+
+.component {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+
+  &.thumbnail {
+    .scrollItem {
+      width: 40%;
+    }
+  }
+  &.productTiles {
+    width: 100%;
+    padding: 0 $spacingSm;
+    @media (--desktop) {
+      padding: 0;
+    }
+    .scrollItem {
+      margin-right: $spacingXs;
+      @media (--desktop) {
+        width: 19.2%;
+        margin-right: 1%;
+      }
+      @media (--small-desktop) {
+        width: 25%;
+      }
+      @media (--tablet) {
+        width: 28%;
+      }
+      @media (--smartphone) {
+        width: 44%;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.scrollItem {
+  display: inline-block;
+  margin-right: $spacingNudge;
+  vertical-align: top;
+  white-space: normal;
+  a {
+    display: block;
+  }
+}

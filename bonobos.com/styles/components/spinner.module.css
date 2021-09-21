@@ -1,0 +1,26 @@
+@import "../mixins.css";
+
+.component {
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.dark {
+  svg {
+    @mixin fill_white;
+  }
+}
+
+.light {
+  svg {
+    @mixin fill_white;
+  }
+}
+
+.medium {
+  svg {
+    @mixin fill_primary;
+  }
+}

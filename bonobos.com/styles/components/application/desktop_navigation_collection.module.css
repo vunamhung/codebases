@@ -1,0 +1,7 @@
+.desktopNav {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

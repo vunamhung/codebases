@@ -1,0 +1,87 @@
+@import "../media.css";
+@import "../colors.css";
+@import "../mixins.css";
+
+/* requires transforming with postcss-prefix-selector in postcss config to be prefixed with .component :global */
+@import "react-image-gallery/styles/css/image-gallery-no-icon.css";
+
+.component {
+  :global .image-gallery-content {
+    :global .image-gallery-left-nav, :global .image-gallery-right-nav {
+      height: 85%;
+      width: 75px;
+      padding: 0 15px;
+      background-color: transparent;
+      appearance: none;
+      border: none;
+      @media (--smartphone) {
+        display: none;
+      }
+    }
+
+    :global .image-gallery-left-nav:before, :global .image-gallery-left-nav:after, :global .image-gallery-right-nav:before, :global .image-gallery-right-nav:after {
+      content: ' ';
+      height: 16px;
+      width: 16px;
+      border-right: 4px solid $grey1;
+      border-bottom: 4px solid $grey1;
+      padding: 0;
+      margin: 0;
+      display: block;
+      position: absolute;
+    }
+
+    :global .image-gallery-left-nav:before, :global .image-gallery-left-nav:after {
+      transform: rotate(135deg);
+      left: 20px;
+    }
+
+    :global .image-gallery-right-nav:before, :global .image-gallery-right-nav:after {
+      transform: rotate(-45deg);
+      right: 20px;
+    }
+
+    :global .image-gallery-left-nav:after, :global .image-gallery-right-nav:after {
+      border-color: $grey4;
+      border-width: 2px;
+    }
+
+    :global .image-gallery-bullets {
+      bottom: 30px;
+      right: 30px;
+      width: inherit;
+      left: auto;
+      @media (max-width: 768px) {
+        .image-gallery-bullet {
+          margin: 0 4px;
+          padding: 4px;
+        }
+      }
+    }
+
+    :global .image-gallery-slide {
+      background-color: transparent;
+    }
+
+    :global .image-gallery-bullet {
+      box-shadow: 0 0 0 1px $grey4;
+
+      &.active {
+        background: $grey4;
+      }
+    }
+  }
+}
+
+[data-keyboard="true"] {
+  .component {
+    :global .image-gallery-content {
+      :global .image-gallery-bullet:focus {
+        @mixin default_ada_focus;
+      }
+      button:focus {
+        @mixin default_ada_focus;
+      }
+    }
+  }
+}

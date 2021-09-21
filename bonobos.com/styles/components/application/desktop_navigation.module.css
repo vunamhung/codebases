@@ -1,0 +1,95 @@
+@import "../../media.css";
+@import "../../typography.css";
+@import "../../mixins.css";
+
+.component {
+  display: flex;
+  padding: $spacingMd;
+  justify-content: center;
+  flex-direction: row;
+  max-width: 980px;
+  margin: 0 auto;
+
+  .textWrapper {
+    padding-right: $spacingLg;
+    padding-left: $spacingMd;
+  }
+
+
+  .navWrapper {
+    width: 100%;
+
+    h2 {
+      margin: 0;
+      padding: $spacingXs 0;
+    }
+  }
+}
+
+.columnHeader{
+  @mixin text_primary;
+  @mixin typeVanity;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  text-align: right;
+  padding-right: $spacingLg;
+}
+
+.linkText{
+  cursor: pointer !important;
+}
+
+.imageCtaWrapper {
+  padding-left: $spacingLg;
+}
+
+.navWrapper {
+  a {
+    @mixin text_secondary;
+    @mixin metaTitleText;
+    font-size: 15px;
+    text-align: right;
+    display: block;
+    margin: 0;
+    padding: $spacingXs 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .navBadge{
+    @mixin text_primary;
+    display: inline-block;
+    font-size: 8px;
+    line-height: 16px;
+    font-weight: 800;
+    position: relative;
+    top: -6px;
+    padding-left: $spacingNudge;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.imageArea{
+  display: flex;
+  justify-content: left;
+  height: 400px;
+  @mixin border_left_primary;
+}
+
+
+.imageTextFirst {
+  padding-top: $spacingXs;
+  @mixin text_primary;
+  @mixin typePrimary;
+  @mixin metaTitleText;
+}
+
+.imageTextSecond{
+  @mixin text_primary;
+  @mixin metaDescriptionText;
+  text-decoration: underline;
+}

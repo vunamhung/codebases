@@ -1,0 +1,64 @@
+@import "../media.css";
+
+/* Always hide for mobile devices */
+@media(--smartphone) {
+  .embeddedServiceHelpButton .uiButton .helpButtonLabel .message {
+    display: none;
+  }
+
+  .embeddedServiceHelpButton .uiButton,
+  .sidebarMinimized .embeddedServiceSidebarMinimizedDefaultUI {
+    height: 40px !important;
+    min-width: 3em !important;
+    padding: 0 !important;
+  }
+
+  .embeddedServiceHelpButton .embeddedServiceIcon,
+  .sidebarMinimized .embeddedServiceSidebarMinimizedDefaultUI .embeddedServiceIcon ~ .messageContent {
+    margin-right: 0 !important;
+    max-width: 0 !important;
+    padding-left: .85em !important;
+  }
+
+  /* minimized inactive chat */
+  .embeddedServiceSidebarMinimizedDefaultUI.helpButton {
+    min-width: 2.5em !important;
+    width: 10px !important;
+  }
+
+  .sidebarMinimized .embeddedServiceSidebarMinimizedDefaultUI .messageContent {
+    padding-left: 0.5em !important;
+  }
+
+  /* This disable auto zoom on Input fields in chat form */
+  .embeddedServiceSidebarForm .fieldList .input,
+  .embeddedServiceLiveAgentStateChatInputFooter .chasitorText.textarea {
+    font-size: 16px;
+  }
+
+  /* This restyles the minimized chat */
+  .embeddedServiceSidebarMinimizedDefaultUI {
+    bottom: 12px !important;
+    height: 40px !important;
+    width: 100px !important;
+  }
+}
+
+/* Force left align */
+.embeddedServiceHelpButton .helpButton,
+.embeddedServiceSidebar .helpButton,
+.embeddedServiceSidebar .minimizedContainer,
+.embeddedServiceSidebar .embeddedServiceSidebarMinimizedDefaultUI {
+  left: 12px !important;
+  right: inherit !important;
+}
+
+.embeddedServiceSidebar .dockableContainer {
+  left: 20px !important;
+  right: auto !important;
+}
+
+/* Hide if chat is offline */
+.embeddedServiceHelpButton .helpButton .helpButtonDisabled {
+  display: none !important;
+}

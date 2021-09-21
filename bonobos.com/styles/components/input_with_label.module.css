@@ -1,0 +1,36 @@
+@import "../typography.css";
+@import "../mixins.css";
+
+.component {
+  padding: $spacingXs 0 $spacingXs;
+  position: relative;
+}
+
+.label { 
+  @mixin labelText;
+  @mixin text_secondary;
+  display: block;
+  margin: 0 10px 5px 0;
+  position: absolute;
+  padding: 18px 0 0 12px;
+  transition: all 0.1s ease-in-out;
+  cursor: text;
+}
+
+.error {
+  .label {
+    @mixin text_error;
+  }
+}
+
+.input {
+  input {
+    height: 56px;
+  }
+}
+
+.inputFocus {
+  input {
+    padding-top: $spacingSm;
+  }
+}

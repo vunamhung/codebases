@@ -1,0 +1,79 @@
+@import "../typography.css";
+@import "../mixins.css";
+@import "../colors.css";
+
+.component {
+  h1,h2,h3,h4,h5,h6 {
+    @mixin typePrimary;
+    margin: 0;
+  }
+  a {
+    @mixin text_brand;
+    @mixin linkText;
+  }
+  h1 {
+    @mixin headerText;
+  }
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  table {
+    margin: 20px auto 0;
+    @mixin background_primary;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  tr {
+    height: 38px;
+    @mixin border_primary;
+  }
+  th {
+    @mixin metaDescriptionText;
+    width: 160px;
+    @mixin background_tertiary;
+  }
+  th:first-child {
+    border-right: 2px solid $grey3;
+  }
+  tbody {
+    tr {
+      @mixin border_bottom_primary;
+      @mixin metaDescriptionText;
+    }
+    td:first-child {
+      border-right: 2px solid $grey2;
+    }
+  }
+  em {
+    @mixin captionDescriptionText;
+  }
+  strong {
+    @mixin metaTitleText;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+  }
+  p {
+    margin: 15px 0;
+    white-space: normal;
+    max-width: 100%;
+    @mixin text_tertiary;
+    @mixin metaDescriptionText;
+  }
+  ul {
+    @mixin text_tertiary;
+    @mixin metaDescriptionText;
+    list-style-type: disc;
+    margin: 15px 0;
+    padding: 0 $spacingSm;
+  }
+  &.left {
+    text-align: left;
+  }
+  &.right {
+    text-align: right;
+  }
+  &.center {
+    text-align: center;
+  }
+}

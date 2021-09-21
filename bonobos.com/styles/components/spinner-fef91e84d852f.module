@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"component":"spinner_component__cLESH","dark":"spinner_dark__oM7hf","light":"spinner_light__qGf__","medium":"spinner_medium__1Zx1D"};

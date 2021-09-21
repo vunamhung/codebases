@@ -1,0 +1,138 @@
+@import "../../typography.css";
+@import "../../mixins.css";
+@import "../../design_tokens.css";
+
+.component {
+  h3 {
+    @mixin text_primary;
+  }
+}
+
+  .fullWidthWithNav{
+    display: -webkit-inline-box;
+    padding-left: $spacingMd;
+    padding-right: $spacingMd;
+    @media (--smartphone-and-tablet) {
+      padding-left: 0px;
+      padding-right: 0px;
+      display: inherit;
+    }
+  }
+
+  .boxLayout{
+    display: -webkit-box;
+    max-width: 1440px;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    padding: 0px 3%;
+    &.body{
+      @media (--smartphone-and-tablet) {
+        padding: 0;
+        display: inherit;
+      }
+    }
+    @media (--smartphone-and-tablet) {
+      display: inherit;
+    }
+  }
+
+  .body{
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .pageTitle{
+    @mixin titleText;
+    text-align: left;
+    @media (--smartphone-and-tablet) {
+      margin: 0;
+    }
+  }
+
+  .desktopNavigationHeader {
+    display: flex;
+    width: 100%;
+    position: sticky;
+    top: $desktopMinifiedHeaderHeight;
+    @mixin background_secondary;
+    margin-bottom: $spacingLg;
+    z-index: 1;
+  }
+
+  .desktopNavigationWhiteBG {
+    @mixin background_primary;
+  }
+
+  .bodyWithNav{
+    width: 86%;
+    @media (--smartphone-and-tablet) {
+      width: 100%;
+    }
+  }
+
+  .tabletNavigationWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 12px 12px 20px;
+  }
+
+  .tabletNavigationContainers {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hideOnDesktop {
+    @mixin hide_on_desktop;
+  }
+
+  .hideOnSmartPhoneAndTablet {
+    @mixin hide_on_smartphone_and_tablet;
+  }
+
+  .contentFormatWrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  .flyoutButton {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width:100%;
+    display: flex;
+    picture {
+      cursor: url(https://bnbs-external.imgix.net/ui/bonobos_zoom_cursor.png) 19 19,auto;
+      @media (--smartphone-and-tablet) {
+        &:after {
+          content: url(https://bnbs-external.imgix.net/ui/bonobos_zoom_cursor.png);
+          position: absolute;
+          bottom: $spacingSm;
+          right: $spacingSm;
+        }
+      }
+    }
+  }
+
+  .modalButton,
+  .chatTrigger {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+  }
+
+  .contentBlockWrapper {
+    width: 100%;
+    display: flex;
+  }
+
+  .clickable {
+    cursor: pointer;
+  }

@@ -1,0 +1,117 @@
+@import "../media.css";
+@import "../typography.css";
+@import "../mixins.css";
+
+.component {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  cursor: inherit;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+
+  section {
+    overflow: hidden;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    transition: transform .5s ease;
+    @mixin background_secondary;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+    .arrowStyling {
+      left: 0px;
+      padding-left: -12px;
+    }
+  }
+}
+
+.arrowStyling {
+  left: -12px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  padding: $spacingSm $spacingXs;
+  width: 100%;
+  text-align: left;
+  @media (--smartphone) {
+    padding: $spacingSm;
+  }
+  .ctaContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .title {
+    @mixin bodyText;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+  .description {
+    @mixin bodyText;
+    margin: 0;
+  }
+}
+
+.secondary {
+  .copy {
+    position: absolute;
+    bottom: $spacingXs;
+    padding: $spacingXs $spacingSm;
+  }
+}
+
+.light {
+  .copy {
+    @mixin text_white;
+  }
+}
+
+.dark {
+  .copy {
+    @mixin text_primary;
+  }
+}
+
+.placeholder {
+  @mixin background_secondary;
+  height: 500px;
+}
+
+.storyImageWrapper {
+  display: flex;
+  flex: 1 1 100%;
+
+  &.portraitStoryImage {
+    display: flex;
+
+    @media (--tablet-and-desktop) {
+      display: none;
+    }
+  }
+
+  &.landscapeStoryImage {
+    display: none;
+
+    @media (--tablet-and-desktop) {
+      display: flex;
+    }
+  }
+}

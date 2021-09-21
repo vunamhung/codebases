@@ -1,0 +1,73 @@
+@import "../typography.css";
+@import "../mixins.css";
+
+.ctaButtonMobile {
+  display: none;
+  @mixin captionDescriptionText;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  @mixin text_brand;
+  width: 100%;
+  text-align: left;
+  padding: 4px 0;
+}
+
+.showQuickShop {
+  .ctaButton {
+    visibility: visible;
+  }
+}
+
+.hideQuickShop {
+  .ctaButton {
+    visibility: hidden;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+
+  .ctaButton {
+    position: absolute;
+    bottom: 4px;
+    left: 1%;
+    width: 98%;
+    z-index: 1;
+    opacity: .8;
+  }
+
+  &:hover {
+    .ctaButton {
+      visibility: visible;
+    }
+  }
+
+  .countDetails {
+    @mixin badgingText;
+    @mixin text_primary;
+    position: absolute;
+    padding-left: $spacingXs;
+    padding-bottom: $spacingNudge;
+    bottom: 0;
+  }
+
+  .soldOut {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+[data-touch-events-supported="false"] {
+  .ctaButton {
+    display: block;
+  }
+}
+
+[data-touch-events-supported="true"] {
+  .ctaButton {
+    display: none;
+  }
+}

@@ -1,0 +1,178 @@
+@import "../../typography.css";
+@import "../../mixins.css";
+
+.component {
+  margin-bottom: $spacingSm;
+}
+
+.light {
+  @mixin background_transparent;
+  .title {
+    @mixin text_primary;
+  }
+
+  .description, .subscribed {
+    @mixin text_tertiary;
+  }
+}
+
+.dark {
+  .title, {
+    @mixin text_primary_alternate;
+  }
+
+  .description, .subscribed, .bottomArea  {
+    @mixin text_secondary_alternate;
+  }
+}
+
+.modal {
+  text-align: center;
+  padding: $spacingLg;
+  margin-bottom: 0;
+  @media (--smartphone) {
+    padding: $spacingLg $spacingSm $spacingSm;
+  }
+  .title {
+    @mixin headerText;
+    @mixin text_primary;
+    font-size: 32px;
+  }
+
+  .description {
+    @mixin text_primary;
+    @mixin bodyText;
+    margin-bottom: $spacingMd;
+    font-weight: 600;
+    @media (--smartphone) {
+      margin-bottom: $spacingXs;
+    }
+  }
+  .subscribedText {
+    @mixin bodyText;
+    margin-bottom: $spacingSm;
+  }
+  .bottomArea {
+    margin: auto;
+  }
+  .subscribed {
+    @mixin text_primary;
+    .successMessage {
+      h1 {
+        @mixin titleText;
+        font-size: 32px;
+      }
+      a, p {
+        @mixin metaTitleText;
+        @mixin text_primary;
+        font-weight: 900;
+        margin: 0;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        padding-bottom: 0;
+        a {
+          text-decoration: underline;
+          text-transform: none;
+        }
+      }
+    }
+  }
+
+}
+
+.formWrapper {
+  position: relative;
+}
+
+.title {
+  @mixin subheaderText;
+  font-weight: 900;
+  margin-bottom: $spacingXs;
+  display: block;
+}
+
+.description {
+  @mixin paragraphText;
+  margin: 0 0 $spacingSm 0;
+  white-space: pre-line;
+}
+
+.subscribed {
+  .successMessage {
+    a, p {
+      padding: $spacingSm 0;
+      @mixin subheaderText;
+      a {
+        text-decoration: underline;
+        text-transform: none;
+      }
+    }
+  }
+}
+
+.subscribedText {
+  @mixin metaDescriptionText;
+
+  .email {
+    @mixin text_brand_accent;
+  }
+}
+
+.component:hover .submit {
+  @mixin background_brand;
+}
+
+.form {
+  display: flex;
+}
+
+.input {
+  @mixin captionDescriptionText;
+  display: inline-block;
+  width: 100%;
+  text-transform: none;
+  @mixin text_primary;
+}
+
+.error {
+  bottom: 7px;
+  position: absolute;
+  left: 0;
+  -webkit-transition: opacity .25s ease-in-out;
+  transition: opacity .25s ease-in-out;
+  @mixin text_white;
+  padding: $spacingXs $spacingSm;
+  @mixin background_error;
+}
+
+.errorMessage {
+  @mixin metaDescriptionText;
+  @mixin text_white;
+}
+
+.buttonContainer {
+  display: flex;
+  width: 50px;
+  margin-left: -$spacingNudge;
+  padding: $spacingXs 0;
+  svg {
+    font-size: $iconSizeSm;
+  }
+}
+
+.bottomArea {
+  max-width: 520px;
+  text-align: left;
+}
+
+.finePrint {
+  padding-top: $spacingSm;
+  a, p {
+    @mixin captionDescriptionText;
+    margin: 0;
+    a {
+      text-decoration: underline;
+      text-transform: none;
+    }
+  }
+}

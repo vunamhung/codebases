@@ -1,0 +1,149 @@
+@import "../../media.css";
+@import "../../typography.css";
+@import "../../mixins.css";
+
+.component {
+  border-top: 1px solid transparent;
+  padding: $spacingXl $spacingLg;
+  overflow: hidden;
+  @mixin background_primary;
+  
+  width: 100%;
+
+  @media (--desktop) {
+    width: 100%;
+    left: 0;
+    min-height: 350px;
+    padding: $spacingHuge;
+  }
+
+  @media (--smartphone-and-tablet) {
+    padding: 0 $spacingXs $spacingMd;
+  }
+}
+
+.footerContents {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  max-width: 1440px;
+  margin: 0 auto;
+  justify-content: space-between;
+  @media (--smartphone-and-tablet) {
+      flex-direction: column;
+  }
+}
+
+.social {
+  width: 100%;
+  padding: $spacingLg $spacingSm;
+  @media (--desktop) {
+    width: 45%;
+    padding: $spacingXl;
+  }
+}
+
+.links {
+  width: 100%;
+  padding: $spacingSm;
+  @media (--desktop) {
+    width: 40%;
+    padding: $spacingXl;
+  }
+}
+
+.socialIcons {
+  padding-top: $spacingSm;
+}
+
+.socialIcon {
+  display: inline-block;
+  margin-right: $spacingXs;
+  font-size: 20px;
+  cursor: pointer;
+  @mixin icon_color_secondary;
+
+  &:hover {
+    @mixin icon_color_primary;
+  }
+}
+
+.blog {
+  display: flex;
+  flex-direction: row;
+  padding-right: $spacingLg;
+  @media (--smartphone-and-tablet) {
+    padding-right: 0;
+  }
+}
+
+.blogImage {
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  display: block;
+  margin-right: $spacingSm;
+}
+
+.blogTitle {
+  @mixin metaDescriptionText;
+  text-transform: uppercase;
+  @mixin text_primary;
+  margin: $spacingXs 0;
+  font-weight: 800;
+}
+
+.blogDescription {
+  @mixin metaDescriptionText;
+  @mixin text_secondary;
+  margin-bottom: $spacingXs;
+  max-width: 400px;
+}
+
+.blogLink {
+  @mixin metaTitleText;
+  margin-top: $spacingXs;
+  @mixin text_primary
+  text-decoration: underline;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  @mixin text_primary;
+}
+
+.linkRow {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.link {
+  @mixin linkText;
+  @mixin text_primary;
+  margin: $spacingXs 0;
+}
+
+.email {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.copyright {
+  @mixin metaTitleText;
+  @mixin text_primary;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $spacingXl;
+   @media (--smartphone-and-tablet) {
+    padding: 0;
+    flex-direction: column-reverse;
+  }
+}

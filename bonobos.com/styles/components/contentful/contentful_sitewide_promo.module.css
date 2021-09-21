@@ -1,0 +1,107 @@
+@import "../../typography.css";
+@import "../../mixins.css";
+
+.sitewideDiscountTitle {
+  @mixin typeVanity;
+  letter-spacing: 2px;
+}
+  
+.sitewideDiscountDescription {
+  @mixin typePrimary;
+  padding-top: $spacingSm;
+  font-size: 40px;
+
+  @media (--smartphone) {
+    font-size: 2em;
+  }
+
+  @media (--tablet) {
+    padding-top: $spacingXs;
+    padding-bottom: 0;
+  }
+}
+  
+.sitewideDiscountTerms {
+  @mixin typePrimary;
+  padding-top: $spacingSm;
+
+  @media (--tablet) {
+    padding-top: $spacingXs;
+  }
+}
+  
+.sitewideDiscountLink {
+  font-size: 16px;
+  @mixin typePrimary;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+}
+
+.home {
+  margin: $spacingXs $spacingXl $spacingXl $spacingXl;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  cursor: inherit;
+  height: auto;
+
+  @media (--smartphone) {
+    margin: $spacingSm;
+  }
+
+  @media (width >= 1440px) {
+    margin: $spacingXs 0 $spacingXl 0;
+  }
+}
+
+.plp {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  cursor: inherit;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.copy {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+
+  @media (--smartphone) {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.left {
+  &.copy {
+    transform: translateY(-50%);
+
+    @media (--tablet-and-desktop) {
+      left: 0;
+      padding-left: 10%;
+      text-align: left;
+    }
+  }
+}
+
+.right {
+  &.copy {
+    transform: translateY(-50%);
+
+    @media (--tablet-and-desktop) {
+      right: 0;
+      padding-right: 10%;
+      text-align: right;
+    }
+  }
+}
+
+.center {
+  &.copy {
+    transform: translateY(-50%);
+  }
+}

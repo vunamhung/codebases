@@ -1,0 +1,516 @@
+@import "../../media.css";
+@import "../../typography.css";
+@import "../../mixins.css";
+
+.component {
+  @mixin accessible_button;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  cursor: inherit;
+  width: 100%;
+  display: flex;
+  div {
+    width: 100%;
+  }
+}
+
+.ctaContainer {
+  padding: $spacingSm 0 0;
+  white-space: normal;
+  max-width: 700px;
+}
+
+.cta{
+  pointer-events: auto;
+  margin-right: $spacingSm;
+  width: 45%;
+  &:only-child {
+    margin-right: 0px;
+    width: auto;
+  }
+}
+
+.copy {
+  position: absolute;
+  @media (--smartphone) {
+    padding: 0 10%;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.title {
+  margin-bottom: 0px;
+  white-space: normal;
+}
+
+.description {
+  @mixin headerText;
+  white-space: normal;
+  margin: $spacingXs auto $spacingNudge;
+  line-height: 1.5;
+  @media (--smartphone) {
+    font-size: 16px;
+  }
+}
+
+.subDescription {
+  @mixin bodyText;
+  font-weight: 700;
+  letter-spacing: 1px;
+  @media (--smartphone) {
+    font-size: 14px;
+  }
+}
+
+.legalText {
+  @mixin metaTitleText;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.primary {
+  .copy {
+    .title {
+      @mixin displayText;
+    }
+  }
+}
+
+.secondary {
+  .copy {
+    .title {
+      @mixin displayText;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+.secondary-left, .secondary-right {
+  .copy {
+    height: 100%;
+    display: inline-block !important;
+    position: relative !important;
+    margin: auto;
+    max-width: 500px;
+    top: 0 !important;
+    padding: $spacingMd 5%!important;
+    .title {
+      @mixin displayText;
+      letter-spacing: 0.5px;
+    }
+    .description {
+      @mixin paragraphText;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .image, .video{
+    @media (--tablet-and-desktop) {
+      display: inline-block;
+      width: 60%;
+    }
+  }
+}
+
+.image {
+  @mixin background_secondary;
+
+  .heroImageWrapper {
+    display: flex;
+    flex: 1 1 100%;
+
+    &.portraitHero {
+      display: block;
+  
+      &:not(.overrideDesktopToPortrait) {
+        @media (--tablet-and-desktop) {
+          display: none;
+        }
+      }
+    }
+ 
+    &.landscapeHero {
+      display: none;
+  
+      &:not(.overrideDesktopToPortrait) {
+        @media (--tablet-and-desktop) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.contentWrapper {
+  @media (--tablet-and-desktop) {
+    display:flex;
+  }
+  &.reverse {
+    @media (--tablet-and-desktop) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.center {
+  .copy {
+    @media (--tablet-and-desktop) {
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+    .ctaContainer {
+      margin: 0 auto;
+    }
+  }
+}
+
+
+.left {
+  .copy {
+    @media (--tablet-and-desktop) {
+      left: 0;
+      padding-left: 6%;
+    }
+  }
+}
+
+.right {
+  .copy {
+    @media (--tablet-and-desktop) {
+      right: 0;
+      padding-right: 5%;
+    }
+  }
+}
+
+.middle {
+  .copy {
+    @media (--tablet-and-desktop) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.top {
+  .copy {
+    @media (--tablet-and-desktop) {
+     top: 64px;
+    }
+  }
+}
+
+.bottom {
+  .copy {
+    @media (--tablet-and-desktop) {
+      bottom: 64px;
+      top: unset;
+    }
+  }
+}
+
+.mobileTop {
+  .copy {
+    @media (--smartphone) {
+      top: 5%;
+    }
+  }
+}
+
+.mobileBottom {
+  .copy {
+    @media (--smartphone) {
+      bottom: 5%;
+    }
+  }
+}
+
+.mobileMiddle {
+  .copy {
+    @media (--smartphone) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.mobile {
+  .copy {
+    @media (--tablet-and-desktop) {
+      display: none;
+    }
+  }
+}
+
+.desktop {
+  .copy {
+    @media (--tablet-and-desktop) {
+      display: none;
+    }
+  }
+}
+
+.light {
+  .copy {
+    @mixin text_white;
+    text-shadow: 3px 1px 14px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.dark {
+  .copy {
+    @mixin text_primary;
+  }
+  :global .btn-homepage {
+    @mixin text_primary;
+    @mixin border_transparent;
+  }
+}
+
+.darkDesktopLightMobile {
+  .copy {
+    @mixin text_primary;
+    @media (--smartphone) {
+      @mixin text_white;
+    }
+  }
+  :global .btn-homepage {
+    @mixin text_primary;
+    @mixin border_transparent;
+  }
+}
+
+.lightDesktopDarkMobile {
+  .copy {
+    @mixin text_white;
+    @media (--smartphone) {
+      @mixin text_primary;
+    }
+  }
+  @media (--smartphone) {
+    :global .btn-homepage {
+      @mixin text_primary;
+      @mixin border_transparent;
+    }
+  }
+}
+
+.imageLink {
+  cursor: pointer;
+}
+
+.copyNoPointerEvents {
+  position: absolute; /* remove from DOM flow */
+  pointer-events: none; /* remove pointer events so background tile is clicked */
+}
+
+.placeholder {
+  @mixin background_secondary;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  cursor: inherit;
+  width: 100%;
+  display: flex;
+}
+
+.textAlignCenter {
+  @media (--tablet-and-desktop) {
+    text-align: center;
+  }
+}
+
+.textAlignRight {
+  @media (--tablet-and-desktop) {
+    text-align: right;
+  }
+}
+
+.textAlignLeft {
+  @media (--tablet-and-desktop) {
+    text-align: left;
+  }
+}
+
+.mobileTextAlignCenter {
+  @media (--smartphone) {
+    text-align: center;
+  }
+}
+
+.mobileTextAlignLeft {
+  @media (--smartphone) {
+    text-align: left;
+  }
+}
+
+.mobileTextAlignRight {
+  @media (--smartphone) {
+    text-align: right;
+  }
+}
+
+.large-avenir-medium {
+  .copy {
+    .title {
+      @mixin avenirMediumLarge;
+    }
+  }
+}
+
+
+.small-avenir-medium {
+  .copy {
+    .title {
+      @mixin avenirMediumSmall;
+    }
+  }
+}
+
+.large-avenir-demi {
+  .copy {
+    .title {
+      @mixin avenirDemiLarge;
+    }
+  }
+}
+
+
+.small-avenir-demi {
+  .copy {
+    .title {
+      @mixin avenirDemiSmall;
+    }
+  }
+}
+
+.large-avenir-bold {
+  .copy {
+    .title {
+      @mixin avenirBoldLarge;
+    }
+  }
+}
+
+.small-avenir-bold {
+  .copy {
+    .title {
+      @mixin avenirBoldSmall;
+    }
+  }
+}
+
+.large-sang-light {
+  .copy {
+    .title {
+      @mixin sangLightLarge;
+    }
+  }
+}
+
+.small-sang-light {
+  .copy {
+    .title {
+      @mixin sangLightSmall;
+    }
+  }
+}
+
+.large-sang-empire {
+  .copy {
+    .title {
+      @mixin sangEmpireLarge;
+    }
+  }
+}
+
+.ten-percent{ 
+  .copy {
+    width: 10%; 
+    @media (--smartphone) {
+     width: 100%;
+    }
+  }
+}
+
+.twenty-percent{ 
+  .copy {
+    width: 20%; 
+    @media (--smartphone) {
+     width: 100%;
+    }
+  }
+}
+
+.thirty-percent{ 
+  .copy {
+    width: 30%; 
+    @media (--smartphone) {
+     width: 100%;
+    }
+  }
+}
+
+.forty-percent{ 
+  .copy {
+    width: 40%; 
+    @media (--smartphone) {
+     width: 100%;
+    }
+  }
+}
+
+.fifty-percent{ 
+  .copy {
+    width: 50%; 
+    @media (--smartphone) {
+     width: 100%;
+    }
+  }
+}
+
+.sixty-percent{ 
+  .copy {
+    width: 60%; 
+    @media (--smartphone) {
+     width: 100%;
+    }
+  }
+}
+
+.seventy-percent{ 
+  .copy {
+    width: 70%; 
+    @media (--smartphone) {
+     width: 100%;
+    }
+  }
+}
+
+.eighty-percent{ 
+  .copy {
+    width: 80%; 
+    @media (--smartphone) {
+     width: 100%;
+    }
+  }
+}
+
+.ninety-percent{ 
+  .copy {
+    width: 90%; 
+    @media (--smartphone) {
+     width: 100%;
+    }
+  }
+}
+
+.one-hundred-percent{ 
+  .copy {
+    width: 100%; 
+  }
+}

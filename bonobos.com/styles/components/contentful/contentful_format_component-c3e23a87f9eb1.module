@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"contentfulBlockCard1":"contentful_format_component_contentfulBlockCard1__26viP","borderBottomBrand":"contentful_format_component_borderBottomBrand__1RHnA","borderBottomBrandStrong":"contentful_format_component_borderBottomBrandStrong__1WZUH","borderPrimary":"contentful_format_component_borderPrimary__3_s4D"};

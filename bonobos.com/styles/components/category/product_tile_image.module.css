@@ -1,0 +1,13 @@
+@import "../../mixins.css";
+
+/* gray image placeholder */
+.image {
+  @mixin background_secondary;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}

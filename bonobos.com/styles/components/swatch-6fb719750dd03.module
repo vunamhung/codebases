@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"component":"swatch_component__3Dk8k","small":"swatch_small__1hBN9","swatch":"swatch_swatch__18dsJ","noSymbolIcon":"swatch_noSymbolIcon__2xlTD","disabled":"swatch_disabled__2_BwT","innerIcon":"swatch_innerIcon__1K1U7","outerIcon":"swatch_outerIcon__21t8Z","skinny":"swatch_skinny__2k9HP","checked":"swatch_checked__15Nru","unchecked":"swatch_unchecked__2mhFD","interactable":"swatch_interactable__27v68"};

@@ -1,0 +1,73 @@
+@import "../../typography.css";
+@import "../../mixins.css";
+
+.component {
+  width: 630px;
+  padding: $spacingXl $spacingLg;
+  @media (--smartphone-and-tablet) {
+    width: 100%;
+    padding: $spacingXl $spacingMd;
+  }
+
+  .headerContainer {
+    width: 100%;
+  }
+
+  .headerText {
+    display: inline-block;
+    width: 65%;
+    padding-bottom: $spacingMd;
+    padding-right: $spacingSm;
+    @media (--smartphone) {
+      width: 100%;
+    }
+  }
+
+  .name {
+    @mixin vanityButtonText;
+    font-weight: 900;
+    padding-bottom: $spacingXs;
+  }
+
+  .discountAmount {
+    @mixin headerText;
+    font-weight: 900;
+    font-size: 25px;
+    padding-bottom: $spacingXs;
+  }
+
+  .promoCode {
+    @mixin metaTitleText;
+    font-weight: 700;
+  }
+
+  .headerDetails {
+    display: inline-block;
+    vertical-align: top;
+    align-content: center;
+    width: 35%;
+    padding-bottom: $spacingMd;
+    @media (--smartphone) {
+      width: 100%;
+    }
+  }
+
+  .detailsBox {
+    @mixin border_secondary;
+    @mixin typeTertiary;
+    line-height: 1.5;
+    padding: $spacingSm;
+    display: table;
+    margin: 0 auto;
+  }
+
+  .detailsPromoCode {
+    padding-bottom: $spacingXs;
+  }
+
+  .promoBody {
+    width: 100%;
+    @mixin metaDescriptionText;
+    @mixin text_secondary;
+  }
+}

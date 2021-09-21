@@ -1,0 +1,99 @@
+@import "../../media.css";
+@import "../../design_tokens.css";
+@import "../../mixins.css";
+@import "../../typography.css";
+@import "../../colors.css";
+
+.component {
+  margin-bottom: $spacingMd;
+  margin: auto;
+}
+
+.headerMinified {
+  margin-top: -$desktopFullHeaderHeight;
+}
+
+.heroRow {
+  @media (--tablet-and-desktop) {
+    display: flex;
+    margin: $spacingSm 0;
+    justify-content: space-between;
+  }
+}
+
+.navigationSlider {
+  margin: $spacingNudge 0;
+  @media (--tablet-and-desktop) {
+    display: none;
+  }
+}
+
+.heroRowItem {
+  width: 100%;
+}
+
+.heroRowItemWrapper {
+  width: 100%;
+  display: block;
+  margin-bottom: $spacingXs;
+  min-height: 180px;
+
+  @media (--tablet-and-desktop) {
+    width: calc(50% - 8px);
+    margin-bottom: 0;
+  }
+}
+
+.heroRowItemWrapperThree {
+  width: 100%;
+  display: block;
+  margin-bottom: $spacingXs;
+  min-height: 180px;
+
+  @media (--tablet-and-desktop) {
+    width: calc(33% - 8px);
+    margin-bottom: 0;
+  }
+}
+
+.heroRowItemWrapperMobile {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: $spacingXs;
+  min-height: 180px;
+
+  @media (--tablet-and-desktop) {
+    width: calc(50% - 8px);
+    margin-bottom: 0;
+    padding: 0;
+    &:last-child{
+      padding-bottom: 0px;
+    }
+  }
+}
+.carouselWrapper{
+  position: relative;
+  margin-bottom: $spacingXs;
+
+  @media (--tablet-and-desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.navigationPillsSlider {
+  margin: $spacingNudge 0;
+}
+
+.homepageHeader {
+  font-size: 0;
+  width: 1px;
+  height: 1px;
+  display: inline-block;
+  overflow: hidden;
+  position: absolute!important;
+  border: 0!important;
+  padding: 0!important;
+  margin: 0!important;
+  clip: rect(1px,1px,1px,1px);
+}

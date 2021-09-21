@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"component":"terms_and_privacy_summary_component__2NMls","privacy":"terms_and_privacy_summary_privacy__2YgNx","terms":"terms_and_privacy_summary_terms__1QIMe","light":"terms_and_privacy_summary_light__1B6I2","a":"terms_and_privacy_summary_a__3oPKu"};

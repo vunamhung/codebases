@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"component":"tooltip_component__XpARv","default":"tooltip_default__bYN6G","popperBg":"tooltip_popperBg__1VxsT","arrow":"tooltip_arrow__3MjFd","target":"tooltip_target__1V5LY","right":"tooltip_right__3LGwl","left":"tooltip_left__301Qn","top":"tooltip_top__15H-l","bottom":"tooltip_bottom__2LFTJ","closeButton":"tooltip_closeButton__2BkRD","icon":"tooltip_icon__ZjE8l","admin":"tooltip_admin__1V_gR","account":"tooltip_account__18QTc"};

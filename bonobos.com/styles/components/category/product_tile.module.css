@@ -1,0 +1,212 @@
+@import "../../media.css";
+@import "../../typography.css";
+@import "../../mixins.css";
+@import "../../design_tokens.css";
+
+.component {
+  padding: 0 0 $spacingLg 0;
+  width: $(productTileMobileWidth)%;
+
+  @media(--tablet-and-desktop) {
+    width: $(productTileTabletAndDesktopWidth)%;
+  }
+
+  a {
+    display: block;
+  }
+}
+
+.recencyBadge {
+  @mixin badgeTitleText;
+  @mixin text_primary;
+  padding-bottom: $spacingXs;
+  text-transform: uppercase;
+}
+
+.urgencyBadge {
+  @mixin badgeTitleText;
+  @mixin text_primary;
+  padding-bottom: $spacingXs;
+  padding-left: $spacingXs;
+}
+
+.productDescription {
+  display: flex;
+  flex-direction: column;
+  padding: $spacingSm $spacingXs 0 $spacingXs;
+}
+
+.title {
+  display: block;
+  padding: 0 0 0 $spacingXs;
+
+  p {
+    @mixin captionDescriptionText;
+    @mixin text_primary;
+    margin: 0 0 $spacingXs 0;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.subtitle {
+  display: block;
+  padding: 0 $spacingXs;
+
+  p {
+    @mixin captionDescriptionText;
+    @mixin text_secondary;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    width: 90%;
+
+    /* IMPORTANT: Here we want to limit the subtitle to 2 lines. And the `36px` comes from:
+                  -> line-height of the element (which comes from the `captionDescriptionText` mixin) x 2
+                  So It's very important that if the line-height is ever changed, this number is
+                  also changed at the same time.
+                  Also we can't use `2em` because in this case the value for line-height is
+                  not the same as the value for font-size. */
+    max-height: 36px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  a {
+    display: inline;
+  }
+}
+
+.productContentContainer {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.productPriceMobile, .productPriceDesktop {
+  @mixin captionTitleText;
+  @mixin text_primary;
+  letter-spacing: 0;
+  flex-direction: column;
+  position: absolute;
+  top: 1px;
+  right: -$spacingNudge;
+  
+  @media (--tablet-and-desktop) {
+    right: 0;
+    top: 2px;
+  }
+}
+
+.productPriceMobile {
+  display: none;
+}
+
+.productPriceDesktop {
+  display: flex;
+}
+
+.salePrice {
+  @mixin text_promo;
+}
+
+.fullPrice {
+  @mixin text_secondary;
+  text-decoration: line-through;
+}
+
+.productName {
+  @mixin captionTitleText;
+  @mixin text_primary;
+  letter-spacing: 0;
+  max-width: 82%;
+
+  @media (--tablet-and-desktop) {
+    @mixin metaTitleText;
+    max-width: 87%;
+  }
+}
+
+.ctaButtonMobile {
+  @mixin captionDescriptionText;
+  @mixin text_brand;
+  display: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: $spacingNudge $spacingXs;
+}
+
+[data-touch-events-supported="false"] {
+  .ctaButtonMobile {
+    display: none;
+  }
+}
+
+[data-touch-events-supported="true"] {
+  .ctaButtonMobile {
+    display: block;
+  }
+}
+
+.swatches {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: $spacingSm auto $spacingXs auto;
+
+  &.leftAligned {
+    align-items: stretch;
+    justify-content: flex-start;
+    padding-left: $spacingXs;
+  }
+
+  @media(--desktop) {
+    width: 100%;
+    margin-top: $spacingXs;
+  }
+
+  &.leftAligned {
+    @media(--desktop) {
+      display: inline;
+    }
+  }
+}
+
+.swatchesComponent {
+  @media(--smartphone) {
+    display: inline-flex;
+  }
+}
+
+.productTileCard {
+  position: relative;
+}
+
+.badgeLimited {
+  position: absolute;
+  @mixin background_primary;
+  @mixin text_primary;
+  bottom: $spacingXs;
+  right: $spacingXs;
+  font-size: 11px;
+  line-height: 16px;
+  border-radius: 2px;
+  padding: $spacingNudge;
+  font-family: "Avenir Next";
+  font-weight: 700;
+}
+

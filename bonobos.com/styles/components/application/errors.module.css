@@ -1,0 +1,45 @@
+@import "../../typography.css";
+@import "../../mixins.css";
+@import "../../colors.css";
+
+.component {
+  margin: auto;
+  max-width: 500px;
+  position: absolute;
+  transition: opacity .25s ease-in-out;
+  top: -47px;
+  left: 0;
+  padding: 8px 15px;
+  @mixin background_error;
+  overflow: visible;
+}
+
+.component:after{
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 10px;
+  bottom: -11px;
+  transition: opacity .25s ease-in-out;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid $alert1;
+}
+
+.message {
+  @mixin metaDescriptionText;
+  @mixin text_white;
+  margin: 0;
+}
+
+.error {
+  @mixin metaDescriptionText;
+  @mixin text_error;
+}
+
+.errorList {
+  list-style-type: disc;
+  margin: 0 20px;
+  padding-left: 20px;
+}

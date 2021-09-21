@@ -1,0 +1,334 @@
+@import "media.css";
+
+@define-mixin typePrimary {
+  font-family: "Avenir Next";
+  font-weight: 600;
+}
+
+@define-mixin typeSecondary {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 400;
+}
+
+@define-mixin typeTertiary {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 700;
+}
+
+@define-mixin typeVanity {
+  font-family: "Avenir Next";
+  font-weight: 900;
+}
+
+@define-mixin typeSangbleuLight {
+  font-family: "Sangbleu Kingdom";
+  font-weight: 100;
+}
+
+@define-mixin typeSangbleuEmpire {
+  font-family: "Sangbleu Empire";
+  font-weight: 900;
+}
+
+/* semantic naming*/
+@define-mixin linkText {
+  @mixin typeTertiary;
+  text-transform: capitalize;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@define-mixin labelText {
+  @mixin typeSecondary;
+  font-size: 14px;
+  line-height: 1.5;
+  &.labelFocus {
+    font-size: 12px;
+    padding-top: 8px;
+  }
+}
+
+@define-mixin captionDescriptionText {
+  @mixin typeSecondary;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+@define-mixin captionTitleText {
+  @mixin typePrimary;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@define-mixin badgeTitleText {
+  @mixin typeVanity;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 0.5px
+}
+
+@define-mixin metaDescriptionText {
+  @mixin typeSecondary;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@define-mixin metaTitleText {
+  @mixin typePrimary;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+@define-mixin bodyTitleText {
+  @mixin typePrimary;
+  font-size: 16px;
+  line-height: 1.5;
+
+  @media (--smartphone) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@define-mixin bodyText {
+  @mixin typeSecondary;
+  font-size: 16px;
+  line-height: 1.5;
+
+  @media (--smartphone) {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@define-mixin inputText {
+  @mixin typeSecondary;
+  /* Anything smaller than 16px will trigger a zoom on focus on iOS devices */
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@define-mixin paragraphText {
+  @mixin typeSecondary;
+  font-size: 18px;
+  line-height: 1.5;
+
+  @media (--smartphone) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@define-mixin subheaderText {
+  @mixin typePrimary;
+  font-size: 18px;
+  line-height: 1.5;
+
+  @media (--smartphone) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@define-mixin headerText {
+  @mixin typePrimary;
+  font-size: 24px;
+  line-height: 1.2;
+
+  @media (--smartphone) {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}
+
+@define-mixin titleText {
+  @mixin typeTertiary;
+  font-size: 32px;
+  line-height: 1.2;
+
+  @media (--smartphone) {
+    font-size: 28px;
+    line-height: 1.5;
+  }
+}
+
+@define-mixin displayText {
+  @mixin typeVanity;
+  font-size: 40px;
+  line-height: 1.2;
+
+  @media (--smartphone-and-tablet) {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+@define-mixin megaText {
+  @mixin typeVanity;
+    font-size: 54px;
+    line-height: 1.2;
+
+  @media (--smartphone) {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+}
+
+@define-mixin navigationText {
+    font-family: "Avenir Next";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    text-transform: capitalize;
+
+    @media (--small-desktop) {
+      font-size: 14px;
+    }
+}
+
+@define-mixin subNavigationText {
+  font-family: "Avenir Next";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@define-mixin badgingText {
+  @mixin typeVanity;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@define-mixin buttonText {
+  @mixin typeTertiary;
+  text-transform: capitalize;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@define-mixin vanityButtonText {
+  @mixin typeTertiary;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+
+@define-mixin sangbleu {
+  font-family: "Sangbleu Kingdom";
+  font-weight: 100;
+}
+
+@define-mixin sangbleuEmpire {
+  font-family: "Sangbleu Empire";
+  font-weight: 900;
+}
+
+@define-mixin avenirMediumLarge {
+  @mixin typePrimary;
+  font-size: 58px;
+  line-height: 1;
+
+  @media (--smartphone-and-tablet) {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+@define-mixin avenirMediumSmall {
+  @mixin typePrimary;
+  font-size: 32px;
+  line-height: 1.2;
+
+  @media (--smartphone-and-tablet) {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+@define-mixin avenirDemiLarge {
+  @mixin typeTertiary;
+  font-size: 58px;
+  line-height: 1;
+
+  @media (--smartphone-and-tablet) {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+@define-mixin avenirDemiSmall {
+  @mixin typeTertiary;
+  font-size: 32px;
+  line-height: 1.2;
+
+  @media (--smartphone-and-tablet) {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+@define-mixin avenirBoldLarge {
+  @mixin typeVanity;
+  font-size: 58px;
+  line-height: 1;
+
+  @media (--smartphone-and-tablet) {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+@define-mixin avenirBoldSmall {
+  @mixin typeVanity;
+  font-size: 32px;
+  line-height: 1.2;
+
+  @media (--smartphone-and-tablet) {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
+
+@define-mixin sangLightLarge {
+  @mixin typeSangbleuLight;
+  font-size: 58px;
+  line-height: 1;
+  letter-spacing: -1px;
+
+  @media (--smartphone) {
+    font-size: 10vw;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+}
+
+@define-mixin sangLightSmall {
+  @mixin typeSangbleuLight;
+  font-size: 3vw;
+  line-height: 1;
+  letter-spacing: -1px;
+
+  @media (--smartphone) {
+    font-size: 10vw;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+}
+
+@define-mixin sangEmpireLarge {
+  @mixin typeSangbleuEmpire;
+  font-size: 58px;
+  line-height: 1;
+  letter-spacing:-1px;
+
+  @media (--smartphone) {
+    font-size: 10vw;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+}

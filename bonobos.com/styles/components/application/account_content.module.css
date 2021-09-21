@@ -1,0 +1,63 @@
+@import "../../typography.css";
+@import "../../mixins.css";
+@import "../../design_tokens.css";
+
+.accountText {
+  @mixin metaDescriptionText;
+  @mixin text_primary;
+  text-transform: capitalize;
+  @media (--smartphone) {
+    display: none;
+  }
+}
+
+.signInLinkText {
+  @mixin metaDescriptionText;
+  @mixin text_primary;
+}
+
+.accountButtonText {
+  @mixin subNavigationText;
+  @mixin text_primary;
+  @media (--smartphone) {
+    display: none;
+}
+
+  @mixin caret-down-menu;
+}
+
+.accountIconWrapper {
+  display: none;
+  position: relative;
+
+  @media (--smartphone) {
+    display: flex;
+  }
+}
+
+.accountDropdownButton {
+  border: none;
+  padding: 0 $spacingXs;
+  background-color: transparent;
+}
+
+.authWrapper {
+  display: flex;
+  align-items: center;
+  height: $desktopMinifiedHeaderHeight;
+  line-height: $desktopMinifiedHeaderHeight;
+  cursor: pointer;
+  @media(--smartphone-and-tablet) {
+    display: flex;
+    height: $mobileHeaderHeight;
+    line-height: $mobileHeaderHeight;
+    align-items: center;
+  }
+  @media (--smartphone) {
+    height: unset;
+    line-height: unset;
+    & > a {
+      padding: 11px;
+    }
+  }
+}

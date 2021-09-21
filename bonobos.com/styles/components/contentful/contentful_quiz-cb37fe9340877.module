@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"component":"contentful_quiz_component__16rb-","top":"contentful_quiz_top__1ucbh","progressBar":"contentful_quiz_progressBar__uXRTx","progress":"contentful_quiz_progress__2dO18","topBar":"contentful_quiz_topBar__1qjMk","backButton":"contentful_quiz_backButton__25cmr","progressText":"contentful_quiz_progressText__X9zW5","middle":"contentful_quiz_middle__3_POo","bottom":"contentful_quiz_bottom__235xS","container":"contentful_quiz_container__302b1","item":"contentful_quiz_item__nQZYt"};
